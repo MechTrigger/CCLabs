@@ -1,0 +1,6 @@
+C:\programming\Contrarian\Contrarian\bin\Debug\Contrarian.exe.config
+C:\programming\Contrarian\Contrarian\bin\Debug\Contrarian.exe
+C:\programming\Contrarian\Contrarian\bin\Debug\Contrarian.pdb
+C:\programming\Contrarian\Contrarian\obj\Debug\Contrarian.csprojResolveAssemblyReference.cache
+C:\programming\Contrarian\Contrarian\obj\Debug\Contrarian.exe
+C:\programming\Contrarian\Contrarian\obj\Debug\Contrarian.pdb

@@ -1,0 +1,6 @@
+C:\programming\PlayMovieQuotes\PlayMovieQuotes\bin\Debug\PlayMovieQuotes.exe.config
+C:\programming\PlayMovieQuotes\PlayMovieQuotes\obj\Debug\PlayMovieQuotes.csprojResolveAssemblyReference.cache
+C:\programming\PlayMovieQuotes\PlayMovieQuotes\bin\Debug\PlayMovieQuotes.exe
+C:\programming\PlayMovieQuotes\PlayMovieQuotes\bin\Debug\PlayMovieQuotes.pdb
+C:\programming\PlayMovieQuotes\PlayMovieQuotes\obj\Debug\PlayMovieQuotes.exe
+C:\programming\PlayMovieQuotes\PlayMovieQuotes\obj\Debug\PlayMovieQuotes.pdb
