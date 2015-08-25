@@ -1,0 +1,12 @@
+﻿@using ShoppingList.Models
+@model IndexViewModel
+<ul>
+    @foreach (var product in Model.Products)
+    {
+        <li>
+            @product.Name
+        </li>
+    }
+</ul>
+@Model.FirstName
+@Model.LastName
