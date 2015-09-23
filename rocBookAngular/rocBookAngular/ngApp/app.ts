@@ -1,0 +1,31 @@
+﻿namespace RocBookAngular {
+
+    angular.module('RocBookAngular', ['ngRoute', 'ngResource', 'ngMessages', 'ui.bootstrap','ngMaterial'])
+
+        .config(($routeProvider: ng.route.IRouteProvider,
+            $locationProvider: ng.ILocationProvider) => {
+            $routeProvider
+                .when('/', {
+                    templateUrl: "/ngApp/home.html",
+                    controller: "HomeController as vm"
+                })
+                .when('/add', {
+                    templateUrl: "/ngApp/add.html",
+                    controller: "VideoAddController as vm"
+                })
+                .when('/search', {
+                    templateUrl: "/ngApp/search.html",
+                    controller: "VideoListController as vm"
+                })
+                .otherwise('/');
+
+            $locationProvider.html5Mode(true);
+        })
+
+        .constant('WebApi', '/api')
+
+        //.config(function ($mdThemingProvider) {
+        //    $mdThemingProvider.theme('default')
+        //        .dark();
+        //});
+}

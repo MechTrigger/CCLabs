@@ -1,0 +1,18 @@
+﻿<md-dialog>
+    <md-dialog-content>
+        <form id="login" ng-submit="account.login()">
+            <div layout="column">
+                <h3>Login</h3>
+                <md-input-container>
+                    <label>Username:</label>
+                    <input ng-model="account.username" />
+                </md-input-container>
+                <md-input-container>
+                    <label>Password:</label>
+                    <input ng-model="account.password" />
+                </md-input-container>
+            </div>
+            <md-button id="registerSubmit" type="submit" value="Login">Login</md-button>
+        </form>
+    </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,32 @@
+﻿<h3>Search</h3>
+
+<button ng-controller="AddModalController as vm" ng-click="vm.openDialog()">Upload Video</button>
+
+<div>
+    <div ng-repeat="video in vm.videos" class="container col-md-3">
+        <div id="mediaDisplay">
+            <h2>{{video.name}}</h2>
+            <p>{{video.description}}</p>
+            <iframe id="searchVideo" ng-src="https://www.youtube.com/embed/1hzVmmlW-mE" frameborder="0" allowfullscreen></iframe>
+            <div class="md-actions" layout="column">
+                <button>Details</button>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<ul>
+    <li ng-repeat="movie in vm.movies">
+        {{movie.title}}
+        <a href="/edit/{{movie.id}}" ng-show="account.isLoggedIn()">edit</a>
+        <a href="/delete/{{movie.id}}" ng-show="account.isLoggedIn()">delete</a>
+    </li>
+</ul>
+
+<a href="/add" ng-show="account.isLoggedIn()">add</a>-->
+
+
+
+
+

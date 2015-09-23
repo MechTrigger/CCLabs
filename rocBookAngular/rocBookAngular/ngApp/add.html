@@ -1,0 +1,21 @@
+﻿
+<md-dialog ng-controller="VideoAddController as vm">
+    <md-dialog-content>
+        <form ng-submit="vm.save()">
+            <md-input-container>
+                <label>Name:</label>
+                <input ng-model="vm.videoToAdd.name" />
+            </md-input-container>
+            <md-input-container>
+                <label>Description:</label>
+                <input ng-model="vm.videoToAdd.description" />
+            </md-input-container>
+            <md-input-container>
+                <label>Video Link:</label>
+                <input ng-model="vm.videoToAdd.videolink" />
+            </md-input-container>
+            <md-button type="submit" value="save">Upload</md-button>
+        </form>
+    </md-dialog-content>
+</md-dialog>
+

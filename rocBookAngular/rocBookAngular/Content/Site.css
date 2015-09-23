@@ -1,0 +1,59 @@
+﻿/** {
+    border: 1px solid red;
+}*/
+
+#header {
+    background-color: black;
+    color: white;
+}
+
+#homeLogo {
+    width: 50%;
+}
+
+body {
+    margin: 100px;
+}
+
+#navLogo {
+    width: 200px;
+}
+
+#toolbar {
+    background-color: black;
+}
+
+.oAuth {
+    width: 50px;
+}
+
+#zombie {
+    width: 35px;
+}
+
+#footer {
+    text-align: center;
+   
+}
+
+/*#login {
+    text-align:center;
+}*/
+
+#registerSubmit {
+    text-align: center;
+}
+
+.indexImg {
+    width: 100%;
+}
+
+#featuredVideo {
+    width: 100%;
+    height: inherit;
+}
+
+#searchVideo {
+    width: 100%;
+}
+

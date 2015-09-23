@@ -1,0 +1,40 @@
+﻿<md-dialog>
+    <md-dialog-content>
+        <form id="register" ng-submit="account.register()">
+            <div layout="column">
+                <h3>Register</h3>
+                <md-input-container>
+                    <label>Username:</label>
+                    <input ng-model="account.username" />
+                </md-input-container>
+                <md-input-container>
+                    <label>Email:</label>
+                    <input ng-model="account.email" />
+                </md-input-container>
+                <md-input-container>
+                    <label>City:</label>
+                    <input ng-model="account.city" />
+                </md-input-container>
+                <md-input-container>
+                    <label>State:</label>
+                    <input ng-model="account.state" />
+                </md-input-container>
+                </div>
+            <div>
+                <md-input-container>
+                    <label>Instrument:</label>
+                    <input ng-model="account.instrument" />
+                </md-input-container>
+                <md-input-container>
+                    <label>Password:</label>
+                    <input ng-model="account.password" />
+                </md-input-container>
+                <md-input-container>
+                    <label>Confirm Password:</label>
+                    <input ng-model="account.confirmpassword" />
+                </md-input-container>
+            </div>
+            <md-button type="submit" value="Register">Register</md-button>
+        </form>
+    </md-dialog-content>
+</md-dialog>

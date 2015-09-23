@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html ng-app="RocBookAngular">
+<head>
+    <title></title>
+    <base href="/" />
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/v0.11.0/angular-material.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="HomeController">
+    <div layout="column">
+        <md-toolbar id="toolbar">
+            <div class="md-toolbar-tools">
+                <img id="navLogo" ng-src="Images/rocBook1.png" />
+                
+                <md-button href="/search">Search</md-button>
+                <md-button ng-controller="AddModalController as vm" ng-click="vm.openDialog()">Upload Video</md-button>
+                <md-button href="/about">About</md-button>
+                <md-button href="/contact">Contact</md-button>
+                                  
+                <span flex></span>
+                <a href=""><img class="oAuth" src="http://icons.iconarchive.com/icons/icontexto/social-inside/256/social-inside-twitter-icon.png">
+                </a>
+
+                <a href=""><img class="oAuth" src="http://icons.iconarchive.com/icons/icontexto/social-inside/256/social-inside-facebook-icon.png"></a>
+              
+                <md-button ng-controller="RegisterController as vm" ng-click="vm.openDialog()">Register</md-button>
+                <md-button ng-controller="LoginController as vm" ng-click="vm.openDialog()">Login</md-button>
+                
+            </div>
+        </md-toolbar>
+    </div>
+ 
+    
+    <ng-view></ng-view>
+  
+    @*<nav class="navbar navbar-default navbar-bottom">
+        <div id="footer" >
+            Dead-Hand Studios Inc
+            <img id="zombie" ng-src="http://dl.glitter-graphics.com/pub/411/411164p2r3mzaml8.gif" />
+            Coder Camps 2015
+        </div>
+    </nav>*@
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-messages.min.js"></script>
+    <script src="https://gitcdn.xyz/repo/angular/bower-material/v0.11.0/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js"></script>
+    <script src="~/ngApp/app.js"></script>
+    <script src="~/ngApp/controllers.js"></script>
+    <script src="~/ngApp/services.js"></script>
+</body>
+</html>
