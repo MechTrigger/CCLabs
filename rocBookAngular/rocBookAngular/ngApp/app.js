@@ -14,6 +14,9 @@ var RocBookAngular;
             .when('/search', {
             templateUrl: "/ngApp/search.html",
             controller: "VideoListController as vm"
+        }).when('/delete/:id', {
+            templateUrl: "/ngApp/delete.html",
+            controller: "VideoDeleteController as vm"
         })
             .otherwise('/');
         $locationProvider.html5Mode(true);

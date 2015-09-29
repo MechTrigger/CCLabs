@@ -1,7 +1,18 @@
 ﻿namespace RocBookAngular.Controllers {
 
     
+    //class DetailsController {
+    //    public openDialog() {
+    //        this.$mdDialog.show({
+    //            controllerAs: 'modal',
+    //            templateUrl: '/ngApp/details.html',
+    //            clickOutsideToClose: true
+    //        })
+    //    }
+    //    constructor(private $mdDialog: angular.material.IDialogService) { }
+    //}
 
+    //angular.module('RocBookAngular').controller('DetailsController', DetailsController);
    
 
     //ADD(MODAL)
@@ -60,15 +71,24 @@
 
     class VideoListController {
         public videos
-        constructor(videoService: RocBookAngular.Services.VideoService) {
+        constructor(videoService: RocBookAngular.Services.VideoService, private $sce: ng.ISCEService, private $location: ng.ILocationService) {
             this.videos = videoService.listVideos();
         }
 
-        public getVid(videolink) {
-            let url = "http://youtube.com/embed/" + videolink;
-            return url.toString;
-        }
+        //public getVid(videolink) {
+        //    let url = "http://youtube.com/embed/" + videolink;
+        //    return url.toString;
+        //}
         
+        public frameSource(videolink:string) {
+
+            return this.$sce.trustAsResourceUrl(videolink);
+        }
+
+        public delete(id) {
+            this.$location.path('/delete/' + id);
+        }
+
     }
 
     angular.module('RocBookAngular').controller('VideoListController', VideoListController);
@@ -105,7 +125,7 @@
         public delete() {
             this.videoService.deleteVideo(this.videoToDelete.id).then(
                 () => {
-                    this.$location.path('/');
+                    this.$location.path('/search');
                 }
                 );
         }

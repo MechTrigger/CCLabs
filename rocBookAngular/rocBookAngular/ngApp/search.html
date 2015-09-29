@@ -7,10 +7,10 @@
         <div id="mediaDisplay">
             <h2>{{video.name}}</h2>
             <p>{{video.description}}</p>
-            <iframe id="searchVideo" ng-src="https://www.youtube.com/embed/1hzVmmlW-mE" frameborder="0" allowfullscreen></iframe>
+            <iframe id="searchVideo" ng-src="{{vm.frameSource(video.videoLink)}}" frameborder="1" allowfullscreen></iframe>
             <div class="md-actions" layout="column">
-                <button>Details</button>
-               
+                <!--<md-button ng-controller="DetailsController as vm" ng-click="vm.openDialog({{video.id}})">Details</md-button>-->
+                <md-button ng-click="vm.delete(video.id)">Delete</md-button>
             </div>
         </div>
     </div>

@@ -2,6 +2,17 @@ var RocBookAngular;
 (function (RocBookAngular) {
     var Controllers;
     (function (Controllers) {
+        //class DetailsController {
+        //    public openDialog() {
+        //        this.$mdDialog.show({
+        //            controllerAs: 'modal',
+        //            templateUrl: '/ngApp/details.html',
+        //            clickOutsideToClose: true
+        //        })
+        //    }
+        //    constructor(private $mdDialog: angular.material.IDialogService) { }
+        //}
+        //angular.module('RocBookAngular').controller('DetailsController', DetailsController);
         //ADD(MODAL)
         var AddModalController = (function () {
             function AddModalController($mdDialog) {
@@ -57,12 +68,20 @@ var RocBookAngular;
         angular.module('RocBookAngular').controller('HomeController', HomeController);
         //VIDEO CONTROLLERS
         var VideoListController = (function () {
-            function VideoListController(videoService) {
+            function VideoListController(videoService, $sce, $location) {
+                this.$sce = $sce;
+                this.$location = $location;
                 this.videos = videoService.listVideos();
             }
-            VideoListController.prototype.getVid = function (videolink) {
-                var url = "http://youtube.com/embed/" + videolink;
-                return url.toString;
+            //public getVid(videolink) {
+            //    let url = "http://youtube.com/embed/" + videolink;
+            //    return url.toString;
+            //}
+            VideoListController.prototype.frameSource = function (videolink) {
+                return this.$sce.trustAsResourceUrl(videolink);
+            };
+            VideoListController.prototype.delete = function (id) {
+                this.$location.path('/delete/' + id);
             };
             return VideoListController;
         })();
@@ -95,7 +114,7 @@ var RocBookAngular;
             VideoDeleteController.prototype.delete = function () {
                 var _this = this;
                 this.videoService.deleteVideo(this.videoToDelete.id).then(function () {
-                    _this.$location.path('/');
+                    _this.$location.path('/search');
                 });
             };
             return VideoDeleteController;
