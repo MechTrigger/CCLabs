@@ -1,0 +1,31 @@
+﻿/** {
+    border: 1px solid red;
+}*/
+
+body {
+    padding-top: 50px;
+}
+
+.lead {
+    margin-bottom: 0;
+}
+
+.ng-cloak {
+    display: none;
+}
+
+#logo {
+    text-align: center;
+}
+
+    #logo img {
+        width: 400px;
+    }
+
+#mackinImg {
+    width: 100px;
+}
+
+#footer {
+    text-align: center;
+}
