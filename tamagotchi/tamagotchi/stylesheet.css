@@ -1,0 +1,57 @@
+﻿/** {
+    border:1px solid blue;
+}*/
+
+body {
+    background-color:black;
+    color:whitesmoke;
+}
+
+#hungerLevel {
+
+}
+
+.levels {
+    background-color:grey;
+    font-size:15pt;
+    text-align:center;
+}
+
+#name {
+    position:relative;
+    left:20px;
+    font-size:20pt;
+}
+
+.topRow {
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.imgRow {
+    margin-bottom:45px;
+}
+
+.btn {
+    color:white;
+    font-size:15pt;
+    
+}
+
+.purse {
+    background-color:grey;
+    text-align:center;
+    font-size:15pt;
+}
+
+.lose {
+    margin-top:35px;
+    font-size:30pt;
+    text-align:center;
+}
+
+.recordTime {
+    margin-top:20px;
+    font-size:20pt;
+    text-align:center;
+}
