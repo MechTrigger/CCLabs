@@ -3,9 +3,10 @@
 
 
     class TodoController {
-        static $inject: string[] = ['TodoService'];
+        static $inject: string[] = ['TodoService', '$timeout'];
 
-        constructor(private TodoService: ITodoService) {
+        constructor(private TodoService: ITodoService,
+            private $timeout: ng.ITimeoutService) {
             this.load();
         }
 
@@ -16,9 +17,12 @@
         private load() {
             this.TodoService.GetAll().success(
                 (lists) => {
+                    angular.forEach(lists, (list, i) => {
+                        list.ShowDeleteTooltip = list.ShowEditTooltip = list.ShowToggleTooltip = false;
+                    });
                     this.todos = lists;
                 }
-            );
+                );
         }
 
         private save(todo: Todo) {
@@ -47,22 +51,31 @@
             }
         }
 
-        markTodoDone(todo: Todo) {
-            todo.Done = true;
-            this.save(todo);
+        setEditMode(todo: Todo) {
+            todo.ShowEditTooltip = false;
+            this.$timeout(() => {
+                todo.IsEdit = true;
+            }, 100);
         }
 
-        markTodoUndone(todo: Todo) {
-            todo.Done = false;
-            this.save(todo);   
+        toggleDone(todo: Todo) {
+            todo.ShowToggleTooltip = false;
+            this.$timeout(() => {
+                todo.Done = !todo.Done;
+                this.save(todo);
+            }, 100);
         }
-        
+
         deleteTodo(todo: Todo) {
-            this.TodoService.Delete(todo.Id).success(
-                () => this.load()
-            );
-        }           
+            todo.ShowDeleteTooltip = false;
+            this.$timeout(() => {
+                this.TodoService.Delete(todo.Id).success(
+                    () => this.load()
+                    );
+            }, 100);
+        }
     }
+    
 
     angular.module('todoApp').controller('TodoController', TodoController);
 } 

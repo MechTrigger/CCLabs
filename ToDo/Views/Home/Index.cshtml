@@ -10,60 +10,55 @@
 
 <body ng-app="todoApp">
     <div class="container" ng-controller="TodoController as vm">
-
         <div class="row">
             <div class="col-xs-12 col-md-offset-3 col-md-6">
-
                 <div id="logo">
                     <img src="~/Images/writeMeDown.png" />
                 </div>
                 <div class="panel panel-primary">
-
-
-
                     <div class="panel-body">
 
-                         @*Form Starts Here*@ 
-                        <div class="input-group input-group-sm" ng-class="{'has-error': vm.addError && vm.newTodoName.length == 0 }">
-                            <input type="text" required class="form-control" ng-model="vm.newTodoName">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button" ng-click="vm.addTodo()" ng-class="{'btn-danger': vm.addError && vm.newTodoName.length == 0 }">
-                                    <span class="glyphicon glyphicon-plus"></span> Add Task
-                                </button>
-                            </span>
-                        </div>
-                         @*Form Ends Here*@ 
+                        <form>
+                            <div class="input-group input-group-sm" ng-class="{'has-error': vm.addError && vm.newTodoName.length == 0 }">
+                                <input type="text" required class="form-control" ng-model="vm.newTodoName">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" ng-click="vm.addTodo()" ng-class="{'btn-danger': vm.addError && vm.newTodoName.length == 0 }">
+                                        <span class="glyphicon glyphicon-plus"></span> Add Task
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
 
                     </div>
-
                 </div>
             </div>
         </div>
-
         <div class="row ng-cloak">
             <div class="col-xs-12 col-md-offset-3 col-md-6">
-
                 <div class="alert alert-warning text-center" ng-show="vm.todos.length == 0">
                     You currently do not have any tasks. Go ahead and add some.
                 </div>
 
-                 @*Task List Starts Here*@ 
+                @*Task List Starts Here*@
                 <ul class="list-group" ng-show="vm.todos.length > 0">
                     <li class="list-group-item clearfix task" ng-repeat="todo in vm.todos" ng-class="{'disabled': todo.Done}">
-
-                        <div class="row" ng-show="todo.isEdit">
+                        <div class="row" ng-show="todo.IsEdit">
                             <div class="col-xs-12">
-                                <div class="input-group" ng-class="{'has-error': todo.Name.length == 0 }">
-                                    <input type="text" class="form-control" ng-model="todo.Name">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" ng-click="vm.editTodo(todo)" ng-class="{'btn-danger': todo.Name.length == 0 }">
-                                            <span class="glyphicon glyphicon-cloud"></span> Save
-                                        </button>
-                                    </span>
-                                </div>
+
+                                <form>
+                                    <div class="input-group" ng-class="{'has-error': todo.Name.length == 0 }">
+                                        <input type="text" class="form-control" ng-model="todo.Name">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit" ng-click="vm.editTodo(todo)" ng-class="{'btn-danger': todo.Name.length == 0 }">
+                                                <span class="glyphicon glyphicon-cloud"></span> Save
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
-                        <div class="row" ng-hide="todo.isEdit">
+                        <div class="row" ng-hide="todo.IsEdit">
                             <div class="col-xs-8">
                                 <div>
                                     <p class="lead">{{todo.Name}}</p>
@@ -71,31 +66,29 @@
                             </div>
                             <div class="col-xs-4">
                                 <div class="pull-right">
-                                    <button class="btn btn-default btn-sm" ng-show="!todo.Done" tooltip="Edit this item" ng-click="todo.isEdit = true;">
+                                    
+                                    <button class="btn btn-default btn-sm" ng-show="!todo.Done" tooltip-trigger="none" ng-mouseenter="todo.ShowEditTooltip = true;" ng-mouseleave="todo.ShowEditTooltip = false;" tooltip-is-open="todo.ShowEditTooltip" tooltip="Edit this task" ng-click="vm.setEditMode(todo)">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </button>
 
-                                    <button class="btn btn-primary btn-sm" tooltip="Mark this item as done" ng-show="!todo.Done" ng-click="vm.markTodoDone(todo)">
-                                        <span class="glyphicon glyphicon-ok"></span>
+                                    <button class="btn btn-primary btn-sm" tooltip-trigger="none" ng-mouseenter="todo.ShowToggleTooltip = true;" ng-mouseleave="todo.ShowToggleTooltip = false;" tooltip-is-open="todo.ShowToggleTooltip" tooltip="Mark this item as {{todo.Done ? 'not done' : 'done' }}" ng-click="vm.toggleDone(todo)">
+                                        <span class="glyphicon" ng-class="{'glyphicon-ok': !todo.Done, 'glyphicon-repeat': todo.Done }"></span>
                                     </button>
 
-                                    <button class="btn btn-primary btn-sm" tooltip="Mark this item as not done" ng-show="todo.Done" ng-click="vm.markTodoUndone(todo)">
-                                        <span class="glyphicon glyphicon-repeat"></span>
-                                    </button>
-
-                                    <button class="btn btn-danger btn-sm" tooltip="Delete this item" ng-click="vm.deleteTodo(todo)">
+                                    <button class="btn btn-danger btn-sm" tooltip-trigger="none" ng-mouseenter="todo.ShowDeleteTooltip = true;" ng-mouseleave="todo.ShowDeleteTooltip = false;" tooltip-is-open="todo.ShowDeleteTooltip" tooltip="Delete this item" ng-click="vm.deleteTodo(todo)">
                                         <span class="glyphicon glyphicon-remove"></span>
                                     </button>
+
                                 </div>
                             </div>
                         </div>
                     </li>
                 </ul>
-                 @*Task List Ends Here*@ 
+                @*Task List Ends Here*@
 
             </div>
         </div>
-        
+
         <div id="footer">
             <div text-muted">
                 Built by Jay Schultz for:
@@ -104,7 +97,7 @@
         </div>
     </div>
 
-   
+
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="~/ngApp/app.js"></script>

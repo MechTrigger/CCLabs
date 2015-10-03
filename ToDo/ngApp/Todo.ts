@@ -6,5 +6,8 @@
         Name: string;
         Done: boolean;
         IsEdit: boolean;
+        ShowEditTooltip: boolean;
+        ShowToggleTooltip: boolean;
+        ShowDeleteTooltip: boolean;
     }
 }

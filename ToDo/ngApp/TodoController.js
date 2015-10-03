@@ -2,14 +2,18 @@ var TodoApp;
 (function (TodoApp) {
     'use strict';
     var TodoController = (function () {
-        function TodoController(TodoService) {
+        function TodoController(TodoService, $timeout) {
             this.TodoService = TodoService;
+            this.$timeout = $timeout;
             this.newTodoName = '';
             this.load();
         }
         TodoController.prototype.load = function () {
             var _this = this;
             this.TodoService.GetAll().success(function (lists) {
+                angular.forEach(lists, function (list, i) {
+                    list.ShowDeleteTooltip = list.ShowEditTooltip = list.ShowToggleTooltip = false;
+                });
                 _this.todos = lists;
             });
         };
@@ -33,19 +37,28 @@ var TodoApp;
                 this.save(todo);
             }
         };
-        TodoController.prototype.markTodoDone = function (todo) {
-            todo.Done = true;
-            this.save(todo);
+        TodoController.prototype.setEditMode = function (todo) {
+            todo.ShowEditTooltip = false;
+            this.$timeout(function () {
+                todo.IsEdit = true;
+            }, 100);
         };
-        TodoController.prototype.markTodoUndone = function (todo) {
-            todo.Done = false;
-            this.save(todo);
+        TodoController.prototype.toggleDone = function (todo) {
+            var _this = this;
+            todo.ShowToggleTooltip = false;
+            this.$timeout(function () {
+                todo.Done = !todo.Done;
+                _this.save(todo);
+            }, 100);
         };
         TodoController.prototype.deleteTodo = function (todo) {
             var _this = this;
-            this.TodoService.Delete(todo.Id).success(function () { return _this.load(); });
+            todo.ShowDeleteTooltip = false;
+            this.$timeout(function () {
+                _this.TodoService.Delete(todo.Id).success(function () { return _this.load(); });
+            }, 100);
         };
-        TodoController.$inject = ['TodoService'];
+        TodoController.$inject = ['TodoService', '$timeout'];
         return TodoController;
     })();
     angular.module('todoApp').controller('TodoController', TodoController);

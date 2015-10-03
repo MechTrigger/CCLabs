@@ -29,3 +29,7 @@ body {
 #footer {
     text-align: center;
 }
+
+.disabled .lead {
+    text-decoration:line-through;
+}
