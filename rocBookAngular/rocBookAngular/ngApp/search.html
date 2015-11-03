@@ -1,9 +1,12 @@
 ﻿<h3>Search</h3>
-
+<form class="form-inline">
+    <input ng-model="query" type="text"
+           placeholder="Filter by" autofocus>
+</form>
 <button ng-controller="AddModalController as vm" ng-click="vm.openDialog()">Upload Video</button>
 
 <div>
-    <div ng-repeat="video in vm.videos" class="container col-md-3">
+    <div ng-repeat="video in vm.videos | filter:query" class="container col-md-3">
         <div id="mediaDisplay">
             <h2>{{video.name}}</h2>
             <p>{{video.description}}</p>

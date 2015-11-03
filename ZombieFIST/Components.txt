@@ -1,0 +1,580 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+
+    @*============================================================== Accordion Sart ============================================================*@
+
+    <h2 class="h1">Top Five</h2>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        One(form inside idea) <span class="icon-plus"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+
+                    <div class="jumbotron">
+                        <div class="form-group">
+                            <h2>Contact details</h2>
+                            <select class="form-control menuInput">
+                                <option value="">Select Country</option>
+                                <option value="ca">Canada</option>
+                                <option value="us">United States</option>
+                                <option value="me">Mexico</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>First Name:</h5>
+                                <div>
+                                    <input type="text" placeholder="First Name" class="form-control menuInput">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Last Name:</h5>
+                                <div>
+                                    <input type="text" placeholder="Last Name" class="form-control menuInput">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5>City:</h5>
+                                <div>
+                                    <input type="text" placeholder="City" class="form-control menuInput">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>State:</h5>
+                                <div>
+                                    <input type="text" placeholder="State" class="form-control menuInput">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>Postcode:</h5>
+                                <div>
+                                    <input type="text" placeholder="Postcode" class="form-control menuInput">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Email:</h5>
+                                <div>
+                                    <input type="text" placeholder="Email" class="form-control menuInput">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Phone:</h5>
+                                <div>
+                                    <input type="text" placeholder="Phone" class="form-control menuInput">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5>Additional Info:</h5>
+                        <div>
+                            <textarea rows="5" placeholder="Additional Info" class="form-control menuInput"></textarea>
+                        </div>
+                        <br />
+                        <a href="#!" class="btn btn-danger">Submit</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Two <span class="icon-plus"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    Ludum mutavit. Verbum est ex. Et ... sunt occidat. Videtur quod est super omne oppidum. Quis transfretavit tu iratus es contudit cranium cum dolor apparatus. Qui curis! Modo nobis certamen est, qui non credunt at.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Three <span class="icon-plus"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    Ludum mutavit. Verbum est ex. Et ... sunt occidat. Videtur quod est super omne oppidum. Quis transfretavit tu iratus es contudit cranium cum dolor apparatus. Qui curis! Modo nobis certamen est, qui non credunt at.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Two <span class="icon-plus"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                    Ludum mutavit. Verbum est ex. Et ... sunt occidat. Videtur quod est super omne oppidum. Quis transfretavit tu iratus es contudit cranium cum dolor apparatus. Qui curis! Modo nobis certamen est, qui non credunt at.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Five <span class="icon-plus"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                    Ludum mutavit. Verbum est ex. Et ... sunt occidat. Videtur quod est super omne oppidum. Quis transfretavit tu iratus es contudit cranium cum dolor apparatus. Qui curis! Modo nobis certamen est, qui non credunt at.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    @*================================================================ End Accordian Feature ================================================== >*@
+
+
+    @*================================================================ Start Feature =========================================================== >*@
+
+    <h2 class="h1">Zombie Feature</h2>
+    <section class="youplay-features container">
+        <div class="col-md-3 col-xs-12">
+            <div class="feature angled-bg">
+                <i class="fa fa-cc-visa"></i>
+                <h3>BiteMe</h3>
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ4day7qmh-usTjWz7FP3gEoYtDrcYN4oZF3TwMgQo6Wd1_-h96" />
+                <h6>Im going insane</h6>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <div class="feature angled-bg">
+                <i class="fa fa-gamepad"></i>
+                <h3>BiteMe</h3>
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ4day7qmh-usTjWz7FP3gEoYtDrcYN4oZF3TwMgQo6Wd1_-h96" />
+                <h6>Im going insane</h6>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <div class="feature angled-bg">
+                <i class="fa fa-money"></i>
+                <h3>BiteMe</h3>
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ4day7qmh-usTjWz7FP3gEoYtDrcYN4oZF3TwMgQo6Wd1_-h96" />
+                <h6>Im going insane</h6>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <div class="feature angled-bg">
+                <i class="fa fa-users"></i>
+                <h3>BiteMe</h3>
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ4day7qmh-usTjWz7FP3gEoYtDrcYN4oZF3TwMgQo6Wd1_-h96" />
+                <h6>Im going insane</h6>
+            </div>
+        </div>
+    </section>
+
+    <br />
+    <br />
+    @*===================================================================== End Feature =========================================================>*@
+
+
+    @*====================================================================== Start Contact Form ===================================================*@
+    <div class="jumbotron">
+        <div class="form-group">
+            <h2>Contact details</h2>
+            <select class="form-control menuInput">
+                <option value="">Select Country</option>
+                <option value="ca">Canada</option>
+                <option value="us">United States</option>
+                <option value="me">Mexico</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h5>First Name:</h5>
+                <div>
+                    <input type="text" placeholder="First Name" class="form-control menuInput">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Last Name:</h5>
+                <div>
+                    <input type="text" placeholder="Last Name" class="form-control menuInput">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h5>City:</h5>
+                <div>
+                    <input type="text" placeholder="City" class="form-control menuInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5>State:</h5>
+                <div>
+                    <input type="text" placeholder="State" class="form-control menuInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Postcode:</h5>
+                <div>
+                    <input type="text" placeholder="Postcode" class="form-control menuInput">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Email:</h5>
+                <div>
+                    <input type="text" placeholder="Email" class="form-control menuInput">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Phone:</h5>
+                <div>
+                    <input type="text" placeholder="Phone" class="form-control menuInput">
+                </div>
+            </div>
+        </div>
+
+        <h5>Additional Info:</h5>
+        <div>
+            <textarea rows="5" placeholder="Additional Info" class="form-control menuInput"></textarea>
+        </div>
+        <br />
+        <a href="#!" class="btn btn-danger">Submit</a>
+    </div>
+
+    @*============================================================== End Contact Form =========================================================*@
+
+
+
+    <!-- Main Content -->
+    <section class="content-wrap">
+
+        <!-- Banner -->
+        <div class="youplay-banner banner-top small">
+            <div class="image" style="background-image: url(assets/images/banner-blog-bg.jpg)" data-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;">
+            </div>
+
+            <div class="info" data-top="opacity: 1; transform: translate3d(0px,0px,0px);" data-top-bottom="opacity: 0; transform: translate3d(0px,150px,0px);" data-anchor-target=".youplay-banner.banner-top">
+                <div>
+                    <div class="container">
+                        <h2> ZombieFist Blog</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- /Banner -->
+
+
+        <div class="container">
+
+            <!-- News List -->
+            <div class="col-md-9">
+
+                <!-- Single News Block -->
+                <div class="news-one row">
+                    <div class="col-md-4">
+                        <a href="blog-post-1.html" class="angled-img">
+                            <div class="img">
+                                @* 1st image *@
+                                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQIehpmEashA7Pm8-_xbl0_g29kOqEXsMZh7qBQyc0VVEfWJIHz8g" alt="">
+                            </div>
+                            <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="9.1 out of 10">
+                                <span>Do</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="clearfix">
+                            <h3 class="h2 pull-left m-0"><a href="blog-post-1.html">Are you zombie ready?</a></h3>
+                            <span class="date pull-right"><i class="fa fa-calendar"></i> Today</span>
+                        </div>
+                        <div class="tags">
+                            <i class="fa fa-tags"></i> Prepare for a zombie apocolypse,
+                        </div>
+                        <div class="description">
+                            <p>
+                                Gus sit amet suum motum. Nescio quando, aut quomodo, nescio quo. Illud scio, amet tortor. Suarum impotens prohibere eum.
+                            </p>
+                            <p>
+                                Sum expectantes. Ego hodie expectantes. Expectantes, et misit unum de pueris Gus interficere. Et suus vos. Nescio quis, qui est bonus usus liberi ad Isai? Qui nosti ... Quis dimisit filios ad necem ... hmm? Gus!
+                            </p>
+                        </div>
+                        <a href="blog-post-1.html" class="btn read-more pull-left">Read More</a>
+                    </div>
+                </div>
+
+                <!-- /Single News Block -->
+                <!-- Single News Block -->
+                <div class="news-one row">
+                    <div class="col-md-4">
+                        <a href="blog-post-2.html" class="angled-img">
+                            <div class="img">
+                                @* 2nd image *@
+                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDn_3UN0ZAJ9o7UeI0hZMb32chHamwwIycnb1_SLbpeLt5ngSa" alt="">
+                            </div>
+                            <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="9 out of 10">
+                                <span>Not</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="clearfix">
+                            <h3 class="h2 pull-left m-0"><a href="blog-post-2.html">Dont forget grandma </a></h3>
+                            <span class="date pull-right"><i class="fa fa-calendar"></i> October 7, 2015</span>
+                        </div>
+                        <div class="tags">
+                            <i class="fa fa-tags"></i> She makes for good bait..
+                        </div>
+                        <div class="description">
+                            Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa. Levir meus, priusquam oppugnarent tempus quis, admonere dicitur. Credo quod idem mihi praesidium.
+                        </div>
+                        <a href="blog-post-2.html" class="btn read-more pull-left">Read More</a>
+                    </div>
+                </div>
+                <!-- /Single News Block Practice below================-->
+                <!-- Single News Block -->
+                <div class="news-one row">
+                    <div class="col-md-4">
+                        <a href="blog-post-1.html" class="angled-img">
+                            <div class="img">
+                                @* 3rd image *@
+                                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQIehpmEashA7Pm8-_xbl0_g29kOqEXsMZh7qBQyc0VVEfWJIHz8g" alt="">
+                            </div>
+                            <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="9.1 out of 10">
+                                <span>Forget</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="clearfix">
+                            <h3 class="h2 pull-left m-0"><a href="blog-post-1.html"> Annual zombie run</a></h3>
+                            <span class="date pull-right"><i class="fa fa-calendar"></i> October 5, 2015</span>
+                        </div>
+                        <div class="tags">
+                            <i class="fa fa-tags"></i> Coming to a city near you,
+                        </div>
+                        <div class="description">
+                            <p>
+                                Gus sit amet suum motum. Nescio quando, aut quomodo, nescio quo. Illud scio, amet tortor. Suarum impotens prohibere eum.
+                            </p>
+                            <p>
+                                Sum expectantes. Ego hodie expectantes. Expectantes, et misit unum de pueris Gus interficere. Et suus vos. Nescio quis, qui est bonus usus liberi ad Isai? Qui nosti ... Quis dimisit filios ad necem ... hmm? Gus!
+                            </p>
+                        </div>
+                        <a href="blog-post-1.html" class="btn read-more pull-left">Read More</a>
+                    </div>
+                </div>
+
+                <!-- /Single News Block -->
+                <!-- Single News Block -->
+                <div class="news-one row">
+                    <div class="col-md-4">
+                        <a href="blog-post-2.html" class="angled-img">
+                            <div class="img">
+                                @* 4th image *@
+                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDn_3UN0ZAJ9o7UeI0hZMb32chHamwwIycnb1_SLbpeLt5ngSa" alt="">
+                            </div>
+                            <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="9 out of 10">
+                                <span> Grandma</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="clearfix">
+                            <h3 class="h2 pull-left m-0"><a href="blog-post-2.html"> In the news</a></h3>
+                            <span class="date pull-right"><i class="fa fa-calendar"></i> October 4, 2015</span>
+                        </div>
+                        <div class="tags">
+                            <i class="fa fa-tags"></i> Prepare for a zombie apoc.
+                        </div>
+                        <div class="description">
+                            Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa. Levir meus, priusquam oppugnarent tempus quis, admonere dicitur. Credo quod idem mihi praesidium.
+                        </div>
+                        <a href="blog-post-2.html" class="btn read-more pull-left">Read More</a>
+                    </div>
+                </div>
+                <!-- /Single News Block -->
+                @*</div>
+                <!-- /News List -->
+                <!-- Right Side -->
+                <div class="col-md-3">
+
+                    <!-- Side Search -->
+                    <div class="side-block right-side">
+                        <p>Search by News:</p>
+                        <form action="search.html">
+                            <div class="youplay-input">
+                                <input type="text" name="search" placeholder="enter search term">
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /Side Search -->*@
+
+
+            </div>
+
+
+
+            <!--================================================ Side Categories start =========================================================== -->
+            <div class="col-md-3">
+                <!-- Side Popular News -->
+                <div class="side-block right-side">
+                    <h4 class="block-title">Popular </h4>
+                    <div class="block-content p-0">
+                        <!-- Single News Block -->
+                        <div class="row youplay-side-news">
+                            <div class="col-xs-3 col-md-4">
+                                <a href="example.html" class="angled-img">
+                                    <div class="img">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWFSDLcrAh5laDDpLrc3BmyN8QtPtctPHV0AB5aVwBIu0ZW4O-LA" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-9 col-md-8">
+                                <h4 class="ellipsis"><a href="blog-post-1.html">Fear the dead 1</a></h4>
+                                <span class="date"><i class="fa fa-calendar"></i> Victor</span>
+                            </div>
+                        </div>
+                        <!-- /Single News Block -->
+                        <!-- Single News Block -->
+                        <div class="row youplay-side-news">
+                            <div class="col-xs-3 col-md-4">
+                                <a href="example.html" class="angled-img">
+                                    <div class="img">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWFSDLcrAh5laDDpLrc3BmyN8QtPtctPHV0AB5aVwBIu0ZW4O-LA" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-9 col-md-8">
+                                <h4 class="ellipsis"><a href="#!">Fear the dead 2</a></h4>
+                                <span class="date"><i class="fa fa-calendar"></i> Christine</span>
+                            </div>
+                        </div>
+                        <!-- /Single News Block -->
+                        <!-- Single News Block -->
+                        <div class="row youplay-side-news">
+                            <div class="col-xs-3 col-md-4">
+                                <a href="example.html" class="angled-img">
+                                    <div class="img">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWFSDLcrAh5laDDpLrc3BmyN8QtPtctPHV0AB5aVwBIu0ZW4O-LA" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-9 col-md-8">
+                                <h4 class="ellipsis"><a href="#!">Fear the dead 3</a></h4>
+                                <span class="date"><i class="fa fa-calendar"></i> Jay</span>
+                            </div>
+                        </div>
+                        <!-- /Single News Block -->
+                        <!-- Single News Block -->
+                        <div class="row youplay-side-news">
+                            <div class="col-xs-3 col-md-4">
+                                <a href="example.html" class="angled-img">
+                                    <div class="img">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWFSDLcrAh5laDDpLrc3BmyN8QtPtctPHV0AB5aVwBIu0ZW4O-LA" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-9 col-md-8">
+                                <h4 class="ellipsis"><a href="#!">Fear the dead 4</a></h4>
+                                <span class="date"><i class="fa fa-calendar"></i> Stephen</span>
+                            </div>
+                        </div>
+                        <!-- /Single News Block -->
+                        <!-- Single News Block -->
+                        <div class="row youplay-side-news">
+                            <div class="col-xs-3 col-md-4">
+                                <a href="example.html" class="angled-img">
+                                    <div class="img">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWFSDLcrAh5laDDpLrc3BmyN8QtPtctPHV0AB5aVwBIu0ZW4O-LA" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-9 col-md-8">
+                                <h4 class="ellipsis"><a href="#!">Fear the dead 5</a></h4>
+                                <span class="date"><i class="fa fa-calendar"></i> Dan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /Single News Block -->
+            <!--================================================ Side Categories End =========================================================== -->
+
+
+
+   
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

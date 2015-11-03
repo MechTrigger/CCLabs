@@ -1,0 +1,42 @@
+<header class="container">
+    <div class="jumbotron" style="background-image: url('/content/images/banner-bg.jpg'); ">
+        <h1>Fist tip</h1>
+        <h2>Best Offense is a Good Defense</h2>
+    </div>
+</header>
+
+<section class="container">
+    <div class="row">
+
+        <!-- larger column for content-->
+        <div class="col-sm-12">
+            <h3>Governor 101</h3>
+            <p>
+                The biggest factor in choosing a weapon or a defensible position is the type of zombie plague you are dealing with.  Are you dealing with 1970's zombie, slow stupid and relatively easy to dispatch? Or are you dealing with the much more frightening 28 Days Later or Dawn of the Dead zombie?  The later are terrifyingly more dangerous because they are fast as hell and probably don't get tired, you can run but you probably will be ravaged eventually even if you are in marathon shape.  And let's be honest, we are easily the fattest country in the world, so chances are you've been eating poptarts watching I Am Legend for the 47th time rather than being slave driven on a cup of dirt a day like some crazy Isis recruit in 100 degree weather.  But luckily for us, you only have to be faster than the guy behind you. Come on, you would have done the same thing as Shane and don't even think otherwise.  Having touched on I Am Legend, we won't even consider this zombie a possiblity, if you don't know why you probably wouldn't be on this site in the first place, I mean c'mon.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+
+            <h5>Top 5 Things to Consider</h5>
+            <ol>
+                <li>What Kind of Zombie your dealing with</li>
+                <li>How large is your group</li>
+                <li>Is your location long term or short term</li>
+                <li>Seasonal changes fro that part of the country</li>
+                <li>Maintainability</li>
+            </ol>
+        </div>
+        <div class="col-sm-8">
+            <p>
+                In short, fast zombies make everything dramatically more difficult. If you can't out run the enemy then your defensive structure becomes the pinnacle of your group's survival.  Travel is more risky and may even be out of the question without battle ready transportation.  We suggest a combat RV or a semi, we will go into greater detail on these vehicles later.  If however, this disease produces slow and stupid zombies, you can get by with less than ideal camp.  Fast to set up and several escape routes are important in any case. You want to be able to create some sort of distraction while you slip away.  Sling some fresh meat chunks with your potato shooter and bolt in the other direction. (That might not work so you may want to test the theory before attempting to split.) Oh, and Grandma might know how to get fresh uninfected meat chunks.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- this is the same footer being fed in here again -->
+<footer class="container" ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

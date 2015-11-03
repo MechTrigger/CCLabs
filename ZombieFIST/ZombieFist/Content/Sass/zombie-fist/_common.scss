@@ -1,0 +1,39 @@
+﻿@import "variables";
+// --------------------------------------------------
+// Common Styles
+// --------------------------------------------------
+a {
+    cursor: pointer;
+}
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+// --------------------------------------------------
+// Validation Styles
+// --------------------------------------------------
+input, textarea, select {
+    &:focus {
+        background-color: $zf-input-active-color !important;
+    }
+
+    &.ng-touched.ng-invalid {
+        background-color: $zf-error-bg;
+    }
+}
+
+.ng-submitted {
+    .ng-invalid {
+        background-color: $zf-error-bg;
+    }
+}
+
+.text-danger {
+    .help-block {
+        color: $zf-error-message-color !important;
+        text-align: right;
+    }
+}
+

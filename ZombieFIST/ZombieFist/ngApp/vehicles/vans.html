@@ -1,0 +1,42 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/Content/Images/homebanner.png'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+<section class="container">
+    <div class="row">
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Title -->
+                    <h3>Vans</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/ngApp/images/prosIcon.png" />
+                    <!-- Pros -->
+                    <p>
+                        Vans give you the gas mileage of a car for the most part but offer the versitility of carrying more gear. That's about it.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img ng-src="/ngApp/images/consIcon.png" />
+                    <!-- Cons -->
+                    <p>
+                        Let's be honest. Nobody wants to be seen driving a van, zombie apocalypse or not. You show up in a van to some outpost they will send a crew out, steal your stuff and probably feed you and grandma to the local zed.  Seriously. The only excusable reason to drive a van is to find another vehicle. Period.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/vehicles/vehiclessidebar.html'"></div>
+        </div>
+    </div>
+</section>
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

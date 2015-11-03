@@ -29,18 +29,18 @@
 
     angular.module('RocBookAngular').controller('AddModalController', AddModalController);
 
-    //REGISTER(MODAL)
-    class RegisterController {
-        public openDialog() {
-            this.$mdDialog.show({
-                controllerAs: 'modal',
-                templateUrl: '/ngApp/register.html',
-                clickOutsideToClose: true
-            })
-        }
-        constructor(private $mdDialog: angular.material.IDialogService) { }
-    }
-    angular.module('RocBookAngular').controller('RegisterController', RegisterController);
+    ////REGISTER(MODAL)
+    //class RegisterController {
+    //    public openDialog() {
+    //        this.$mdDialog.show({
+    //            controllerAs: 'modal',
+    //            templateUrl: '/ngApp/register.html',
+    //            clickOutsideToClose: true
+    //        })
+    //    }
+    //    constructor(private $mdDialog: angular.material.IDialogService) { }
+    //}
+    //angular.module('RocBookAngular').controller('RegisterController', RegisterController);
 
     //LOGIN(MODAL)
     class LoginController {
@@ -164,6 +164,50 @@
     angular.module('RocBookAngular').controller('VideoAddController', VideoAddController);
 
     //LOGIN
+
+    const authenticateURL = '/Token';
+
+    class AccountController {
+        username: string
+        password: string
+        loginMessage: string
+        newuser
+
+        register() {
+            this.$http.post("/api/Account/Register", this.newuser).success(() => {
+                this.$location.path('/');
+            });
+        }
+
+        login() {
+
+            let data = "grant_type=password&username=" + this.username + "&password=" + this.password;
+            this.$http.post(authenticateURL, data,
+                {
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                }).success((result: any) => {
+                    this.$window.sessionStorage.setItem('token', result.access_token);
+                    this.$location.path('/');
+                }).error(() => {
+                    this.loginMessage = 'Invalid user name/password';
+                });
+        }
+
+        logout() {
+            this.$window.sessionStorage.removeItem('token');
+            this.$location.path('/');
+        }
+
+        isLoggedIn() {
+            return this.$window.sessionStorage.getItem('token');
+        }
+
+        constructor(private $http: ng.IHttpService, private $window: ng.IWindowService, private $location: ng.ILocationService) { }
+    }
+
+
+    angular.module('RocBookAngular').controller('AccountController', AccountController);
+
     //class AccountController {
     //    username: string
     //    password: string

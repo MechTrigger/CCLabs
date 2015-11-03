@@ -1,0 +1,179 @@
+﻿@import "variables";
+//*********************************************************
+// Component-Specific styles.
+//*********************************************************
+
+// --------------------------------------------------
+// Customizations of Bootstrap components
+// --------------------------------------------------
+
+// navbar
+// ---------------------
+.navbar-nav {
+    font-size: $zf-navbar-font-size;
+}
+
+.navbar li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+// jumbotron
+// ---------------------
+.jumbotron {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+
+    .container &,
+    .container-fluid & {
+        border-radius: 0;
+    }
+}
+
+// --------------------------------------------------
+// Custom components
+// --------------------------------------------------
+
+// billboard
+// ---------------------
+.billboard {
+    display: table;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: $navbar-height * 3;
+
+    .well {
+        @extend %translucent;
+        border: 0;
+    }
+}
+
+// social-icon
+// ---------------------
+.social-icon {
+    display: inline-block;
+    width:125px;
+    height:125px;
+    margin:0 20px;
+    line-height:120px;
+    text-align: center;
+    font-size: $zf-social-icons-font-size;
+    color: $zf-social-icons-color !important;
+    @extend %translucent;
+
+    &:hover,
+    &:focus {
+        color: $zf-social-icons-hover-color !important;
+    }
+}
+
+// background video
+// ---------------------
+.background-video {
+    background-color: $zf-background-video-bg;
+    border: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -50;
+    width: 2000px;
+    height: 1125px;
+
+    > iframe {
+        opacity: $zf-background-video-opacity;
+        width: 2000px;
+        height: 1125px;
+    }
+}
+
+// background music
+// ---------------------
+.background-music {
+    width: 0;
+    height: 0;
+    border: 0;
+
+    > iframe {
+        width: 0;
+        height: 0;
+        border: 0;
+    }
+}
+
+// login-provider
+// ---------------------
+.login-provider {
+    border-radius: 50%;
+    margin: 0 20px;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    padding-top:10px;
+    font-size: 36px;
+    text-align: center;
+    @extend %translucent;
+
+    a {
+        color: $zf-social-icons-color !important;
+
+        &:hover,
+        &:focus {
+            color: $zf-social-icons-hover-color !important;
+        }
+    }
+}
+
+// copyright
+// ---------------------
+.copyright {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: $zf-copyright-padding;
+    @extend %translucent;
+
+    p {
+        color: $zf-copyright-color;
+        font-size: $zf-copyright-font-size;
+    }
+}
+
+
+// google map
+//-------------------
+#mapDiv {
+    min-height: 500px;
+    border: solid 10px #666;
+    margin: 40px;
+}
+
+#zfiw_wrapper {
+    width: 400px;
+    color: #000;
+
+    button {
+        width: 80px;
+    }
+
+    input {
+        width: 220px;
+    }
+}
+
+#zfiw_btn_wrapper {
+    margin: 3px 0;
+}
+
+#zfiw_delete {
+    margin-left: 20px;
+    width: 60px;
+}
+

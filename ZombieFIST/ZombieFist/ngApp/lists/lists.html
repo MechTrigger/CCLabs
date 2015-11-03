@@ -1,0 +1,117 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/Content/Images/homebanner.png');">
+        <h1>Survival Plan Lists</h1>
+        <h2></h2>
+    </div>
+</header>
+
+<!--SURVIVAL LIST CREATION-->
+
+<!--Alert when there are no lists-->
+<section class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Surival Plan Lists</h4>
+            <div class="alert alert-warning" ng-show="vm.lists.length === 0">
+                <p class="text-center">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <b>Survive!</b>
+                    You have no Fist Lists!
+                </p>
+            </div>
+
+            <!--START OF LISTS-->
+            <!--Save + Delete List-->
+            <div class="panel panel-primary" ng-repeat="list in vm.lists">
+                <div class="panel-heading h5">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <span class="" ng-show="!list.isEdit">{{list.name}}</span>
+                            <input ng-show="list.isEdit" type="text" ng-model="list.name" class="form-control" />
+                        </div>
+                        <div class="col-xs-4 text-right">
+                            <a ng-show="list.isEdit" class="btn btn-xs btn-default" tooltip-append-to-body="true" tooltip="Save changes" ng-click="vm.editList(list)">
+                                <span class="fa fa-save"></span>
+                            </a>
+                            <a ng-show="!list.isEdit" class="btn btn-xs btn-default" tooltip-append-to-body="true" tooltip="Edit this list" ng-click="list.isEdit = true">
+                                <span class="fa fa-pencil"></span>
+                            </a>
+                            <a ng-show="!list.isEdit" class="btn btn-xs btn-danger" tooltip-append-to-body="true" tooltip="Delete this list" ng-click="vm.deleteList(list.id)">
+                                <span class="fa fa-times"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Alert when a list is empty, no items yet-->
+                <div class="panel-body panel-body-no-padding" ng-show="list.items.length === 0">
+                    <div class="alert alert-warning">
+                        <p class="text-center">
+                            <i class="fa fa-exclamation-triangle"></i>
+                            <b>What items do you need?</b>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <!--Delete Item-->
+                <ul class="list-group" ng-repeat="item in list.items">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-10">
+                                <span ng-show="!item.isEdit">{{item.text}}</span>
+                                <input ng-show="item.isEdit" type="text" ng-model="item.text" class="form-control" />
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pull-right">
+                                    <a ng-show="item.isEdit" class="btn btn-xs btn-default" tooltip-append-to-body="true" tooltip="Save changes" ng-click="vm.editItem(item)">
+                                        <span class="fa fa-save"></span>
+                                    </a>
+                                    <a ng-show="!item.isEdit" class="btn btn-xs btn-default" tooltip-append-to-body="true" tooltip="Edit this item" ng-click="item.isEdit = true">
+                                        <span class="fa fa-pencil"></span>
+                                    </a>
+                                    <a ng-show="!item.isEdit" class="btn btn-xs btn-danger" tooltip-append-to-body="true" tooltip="Delete this item" ng-click="vm.deleteItem(item.id)">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!--Add Item-->
+                <div class="panel-footer">
+                    <div class="form-group">
+                        <div class="input-group has-success">
+                            <label class="input-group-addon" class="btn-default" ng-class="{ 'bg-danger' : list.newItemError && list.newItem.length === 0 }">New Item</label>
+                            <input type="text" class="form-control" ng-model="list.newItem" ng-class="{'ng-touched ng-invalid': list.newItemError && list.newItem.length == 0 }" />
+                            <div class="input-group-btn">
+                                <a class="btn btn-success" ng-class="{ 'btn-danger' : list.newItemError && list.newItem.length === 0 }" tooltip-append-to-body="true" ng-click="vm.addItem(list)" tooltip="Add new item">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Add List-->
+            <div class="well well-sm">
+                <div class="form-group">
+                    <div class="input-group has-warning">
+                        <label class="input-group-addon" ng-class="{ 'bg-danger' : vm.newListError && vm.newListName.length == 0 }">New List</label>
+                        <input type="text" class="form-control" ng-model="vm.newListName" ng-class="{'ng-touched ng-invalid': vm.newListError && vm.newListName.length == 0 }" />
+                        <div class="input-group-btn">
+                            <a class="btn btn-warning" ng-class="{ 'btn-danger' : vm.newListError && vm.newListName.length == 0 }" tooltip-append-to-body="true" ng-click="vm.addList()" tooltip="Add new list">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- this is the same footer again, just feeding it in here too-->
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

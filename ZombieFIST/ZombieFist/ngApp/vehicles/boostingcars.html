@@ -1,0 +1,39 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/Content/Images/homebanner.png'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+<section class="container">
+    <div class="row">
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="lead">Boosting Cars for Dummies - <em>2nd Edition</em></p>
+                    <p>
+                        So you need a vehicle.  Chances are you may burn through a few of them. Luckily you can probably take your pick.  But which one is the right one? Well in this section we break down the good the bad and the ugly.  Even more lucky for you is the fact that you want the ugly ones.  The big, the bad, the burly nature of a mud stomping gasoholic is just what you need. But first let's cover some of the choices. Read on survivor.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>
+                        Pick a category to the right to learn more.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/vehicles/vehiclessidebar.html'"></div>
+        </div>
+    </div>
+</section>
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

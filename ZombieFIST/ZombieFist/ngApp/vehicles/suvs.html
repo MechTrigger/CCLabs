@@ -1,0 +1,42 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/Content/Images/homebanner.png'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+<section class="container">
+    <div class="row">
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Title -->
+                    <h3>SUVs</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/ngApp/images/prosIcon.png" />
+                    <!-- Pros -->
+                    <p>
+                        Some SUV's have great suspension and most have unexposed storage area.  If you choose a solid model, you can expect a versatile vehicle that responds well in both rough terrain and navigating city streets.  There won't be shortage of these anytime soon.  Every soccer mom in our country is bound to own one of these at some point.  Opt for the more rugged jeep variety.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img ng-src="/ngApp/images/consIcon.png" />
+                    <!-- Cons -->
+                    <p>
+                        If you count the cost there isn't much that a decent SUV gives up that it doesn't giveback something valuable in return.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/vehicles/vehiclessidebar.html'"></div>
+        </div>
+    </div>
+</section>
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

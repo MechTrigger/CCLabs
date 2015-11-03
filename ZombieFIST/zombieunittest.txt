@@ -1,0 +1,27 @@
+namespace ZombieFist.Test
+{
+    [TestClass]
+    public class PlanListApiControllerTests
+    {
+        [TestMethod]
+        public void TestMethod1()
+        {
+            // Arrange
+            var lists = new List<PlanList> {
+                new PlanList {Id = 1, Name = "Weapons"},
+                new PlanList {Id = 2, Name = "Locations"}
+                
+            };
+            var mockRepo = new Mock<IGenericRepository>();
+            mockRepo.Setup(r => r.Query<PlanList>()).Returns(lists.AsQueryable());
+            var controller = new PlanListApiController(mockRepo.Object);
+
+            // Act
+            var result = (ViewResult)controller.GetAllLists();
+            var model = (IList<PlanList>)result.Model;
+
+            // Assert
+            Assert.AreEqual("Weapons", model.First().Name);
+        }
+    }
+}

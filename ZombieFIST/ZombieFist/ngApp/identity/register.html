@@ -1,0 +1,74 @@
+﻿<div class="billboard" style="background-image: url('/Content/Images/zombiebackground-2.png'); ">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="well">
+                    <fieldset>
+                        <legend>Create a new account</legend>
+                        <form name="vm.registrationForm" novalidate class="form-group" ng-submit="vm.register()">
+
+                            <div class="form-group">
+                                <div class="alert alert-success ng-cloak" ng-show="vm.registrationSuccess">
+                                    New account created successfully. <a class="alert-link" href="/login">Login Now</a>
+                                </div>
+                                <div class="alert alert-danger ng-cloak" ng-show="vm.registrationError">
+                                    There was a problem creating your account.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input name="firstName" ng-model="vm.newUser.firstName" required type="text" class="form-control" placeholder="First Name">
+                                <div class="text-danger" ng-messages="vm.registrationForm.firstName.$error" ng-show="vm.registrationForm.firstName.$touched || vm.registrationForm.$submitted">
+                                    <span class="help-block" ng-message="required">Required</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input name="lastName" ng-model="vm.newUser.lastName" required type="text" class="form-control" placeholder="Last Name">
+                                <div class="text-danger" ng-messages="vm.registrationForm.lastName.$error" ng-show="vm.registrationForm.lastName.$touched || vm.registrationForm.$submitted">
+                                    <span class="help-block" ng-message="required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" ng-model="vm.newUser.email" required type="email" class="form-control" placeholder="Email">
+                                <div class="text-danger" ng-messages="vm.registrationForm.email.$error" ng-show="vm.registrationForm.email.$touched || vm.registrationForm.$submitted">
+                                    <span class="help-block" ng-message="required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="password" ng-minlength="3" ng-model="vm.newUser.password" required type="password" class="form-control" placeholder="Password">
+                                <div class="text-danger" ng-messages="vm.registrationForm.password.$error" ng-show="vm.registrationForm.password.$touched || vm.registrationForm.$submitted">
+                                    <span class="help-block" ng-message="required">Required</span>
+                                    <span class="help-block" ng-message="minlength">Password must be at least 3 characters</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input name="confirmPassword" ng-model="vm.newUser.confirmPassword" zf-match="vm.newUser.password" required type="password" class="form-control" placeholder="Confirm Password">
+                                <div class="text-danger" ng-messages="vm.registrationForm.confirmPassword.$error" ng-show="vm.registrationForm.confirmPassword.$touched || vm.registrationForm.$submitted">
+                                    <span class="help-block" ng-message="required">Required</span>
+                                    <span class="help-block" ng-message="match">Passwords must match</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-danger" ng-disabled="vm.isRegistering">Create Account</button>
+                            </div>
+
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

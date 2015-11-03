@@ -1,0 +1,59 @@
+﻿<!-- This line specifies the controller for this partial view. 
+    If you include it like so, you get the controller actions/stuff of that controller -->
+<div class="well" ng-controller="exampleFormController as vm"> 
+    <fieldset>
+        <legend>My Sample Form</legend>
+        <form name="vm.form" ng-submit="vm.send()" novalidate>
+            
+            <div class="alert alert-success" ng-show="vm.messageSent">
+                <p>Thank you. Your message has been sent.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Name</label>
+                        <input class="form-control" required name="name" ng-model="vm.model.name" type="text">
+                        <div class="text-danger" ng-messages="vm.form.name.$error" ng-show="vm.form.name.$touched || vm.form.$submitted">
+                            <span class="help-block" ng-message="required">Required</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label class="control-label">Email</label>
+                            <input class="form-control" required name="email" ng-model="vm.model.email" type="email">
+                            <div class="text-danger" ng-messages="vm.form.email.$error" ng-show="vm.form.email.$touched || vm.form.$submitted">
+                                <span class="help-block" ng-message="required">Required</span>
+                                <span class="help-block" ng-message="email">Invalid Email</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label class="control-label">Message</label>
+                            <textarea class="form-control" required name="message" ng-model="vm.model.message"></textarea>
+                            <div class="text-danger" ng-messages="vm.form.message.$error" ng-show="vm.form.message.$touched || vm.form.$submitted">
+                                <span class="help-block" ng-message="required">Required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</div>

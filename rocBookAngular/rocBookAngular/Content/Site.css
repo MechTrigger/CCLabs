@@ -50,10 +50,11 @@ body {
 
 #featuredVideo {
     width: 100%;
-    height: inherit;
+   height: 250px;
 }
 
 #searchVideo {
     width: 100%;
+    height:250px;
 }
 

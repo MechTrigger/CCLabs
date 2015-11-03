@@ -18,6 +18,10 @@ var RocBookAngular;
             templateUrl: "/ngApp/delete.html",
             controller: "VideoDeleteController as vm"
         })
+            .when('/register', {
+            templateUrl: "/ngApp/register.html",
+            controller: "AccountController as vm"
+        })
             .otherwise('/');
         $locationProvider.html5Mode(true);
     })

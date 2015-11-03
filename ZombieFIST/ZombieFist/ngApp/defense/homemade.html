@@ -1,0 +1,52 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/content/images/mjrFuKF.jpg'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+
+<section class="container">
+    <div class="row">
+
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Title -->
+                    <h3>Home-made</h3>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/ngApp/images/prosIcon.png" />
+                    <!-- Pros -->
+                    <p>
+                        There are many weapons that can be fashioned from common materials you can scavange.  Probably our personal favorite would be 'the potato shooter'.  I know what you are thinking.  Did they just recommend a potato shooter?  Well, they are easy to make: PVC, glue, a grill ignitor and cheap hairspray. They actually pack a wholloping punch, and with a little imagination you can think of all sorts of violent projectiles.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img ng-src="/ngApp/images/consIcon.png" />
+                    <!-- Cons -->
+                    <p>
+                        Homemade weapons are generally less reliable and more novelty than anything else.  While a potato shooter would be fun, I really don't think any of us are Mygyver material. So probably leave the potato shooters generation-Z teenagers.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/defense/defensesidebar.html'"></div>
+        </div>
+    </div>
+</section>
+
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

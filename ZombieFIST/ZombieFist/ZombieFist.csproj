@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6BB9A9B-8DC3-44AF-A4A2-1E109758B72E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZombieFist</RootNamespace>
+    <AssemblyName>ZombieFist</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44301</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.WebApi.3.2.4.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi.WebHost, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.WebApi.WebHost.3.2.4.0\lib\net45-full\Ninject.Web.WebApi.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.3.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.6.1.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\NinjectConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\OAuthConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\Images\homebanner.png" />
+    <Content Include="Content\Images\mjrFuKF.jpg" />
+    <Content Include="Content\Images\nozombiesfence.png" />
+    <Content Include="Content\Images\o-WALKING-DEAD-ZOMBIE-facebook.jpg" />
+    <Content Include="Content\Images\post-apocalyptic-city-zombie.jpg" />
+    <Content Include="Content\Images\247804.jpg" />
+    <Content Include="Content\Images\consIcon.png" />
+    <Content Include="Content\Images\footer-bg.jpg" />
+    <Content Include="Content\Images\mapicon_bigfoot.png" />
+    <Content Include="Content\Images\mapicon_bugout.png" />
+    <Content Include="Content\Images\mapicon_codercamps.png" />
+    <Content Include="Content\Images\mapicon_food.png" />
+    <Content Include="Content\Images\mapicon_supplies.png" />
+    <Content Include="Content\Images\mapicon_water.png" />
+    <Content Include="Content\Images\mapicon_weapons.png" />
+    <Content Include="Content\Images\mapicon_zombies.png" />
+    <Content Include="Content\Images\homebanner.jpg" />
+    <Content Include="Content\Images\prosIcon.png" />
+    <Content Include="Content\Images\zombie-banner1.png" />
+    <Content Include="Content\Images\Zombie-Preparedness.jpg" />
+    <Content Include="Content\Images\zombieattack1.png" />
+    <Content Include="Content\Images\zombiebackground-2.jpg" />
+    <Content Include="Content\Images\zombiebackground-2.png" />
+    <Content Include="Content\Images\zombiebackground5.jpg" />
+    <Content Include="Content\Images\zombiebackground6.jpg" />
+    <Content Include="Content\Images\zombiecloseup1.png" />
+    <Content Include="Content\Images\zombiefistlogologin.png" />
+    <Content Include="Content\Images\zombiefist-logo-small.png" />
+    <Content Include="Content\Images\zombiefisticon.ico" />
+    <Content Include="Content\Sass\bootswatch-cyborg\_overrides.scss" />
+    <None Include="Content\Sass\bootswatch-cyborg\_variables.scss" />
+    <Content Include="Content\Sass\stylemaster.css">
+      <DependentUpon>stylemaster.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Sass\stylemaster.min.css">
+      <DependentUpon>stylemaster.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Sass\zombie-fist\_layout.scss" />
+    <Content Include="Content\Sass\zombie-fist\_components.scss" />
+    <Content Include="Content\Sass\zombie-fist\_neontext.scss" />
+    <Content Include="Content\Sass\stylemaster.css.map">
+      <DependentUpon>stylemaster.css</DependentUpon>
+    </Content>
+    <None Include="Content\Sass\zombie-fist\_common.scss" />
+    <Compile Include="Controllers\AccountApiController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlanLocationApiController.cs" />
+    <Compile Include="Controllers\PlanListApiController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509292326151_InitialCreate.cs" />
+    <Compile Include="Migrations\201509292326151_InitialCreate.Designer.cs">
+      <DependentUpon>201509292326151_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510010753184_UserChanges.cs" />
+    <Compile Include="Migrations\201510010753184_UserChanges.designer.cs">
+      <DependentUpon>201510010753184_UserChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510011454261_UpdateUserAndLists.cs" />
+    <Compile Include="Migrations\201510011454261_UpdateUserAndLists.designer.cs">
+      <DependentUpon>201510011454261_UpdateUserAndLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510210502359_ZombieFist.Models.Data.ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201510210502359_ZombieFist.Models.Data.ApplicationDbContext.Designer.cs">
+      <DependentUpon>201510210502359_ZombieFist.Models.Data.ApplicationDbContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Data\ApplicationDbContext.cs" />
+    <Compile Include="Models\DomainModels\ApplicationUser.cs" />
+    <Compile Include="Models\DomainModels\PlanLocation.cs" />
+    <Compile Include="Models\DomainModels\PlanList.cs" />
+    <Compile Include="Models\DomainModels\PlanListItem.cs" />
+    <Compile Include="Models\DomainModels\PlanLocationType.cs" />
+    <Compile Include="Models\Identity\AccountBindingModels.cs" />
+    <Compile Include="Models\Identity\AccountViewModels.cs" />
+    <Compile Include="Models\Identity\ApplicationUserManager.cs" />
+    <Compile Include="Models\Repositories\IGenericRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Repositories\Implementations\GenericRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Repositories\Implementations\PlanListRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Repositories\Implementations\PlanLocationRepository.cs" />
+    <Compile Include="Models\Repositories\IPlanListRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Repositories\IPlanLocationRepository.cs" />
+    <Compile Include="Models\Services\EmailService.cs" />
+    <Compile Include="Models\Services\Implementations\PlanLocationService.cs" />
+    <Compile Include="Models\Services\Implementations\PlanListService.cs" />
+    <Compile Include="Models\Services\IPlanLocationService.cs" />
+    <Compile Include="Models\Services\IPlanListService.cs" />
+    <Compile Include="Models\ViewModels\SavePlanListItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\SavePlanListViewModel.cs" />
+    <Compile Include="Models\ViewModels\PlanListItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\PlanLocationViewModel.cs" />
+    <Compile Include="Models\ViewModels\PlanListViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="App_Start\OwinStartup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Fonts\FontAwesome.otf" />
+    <Content Include="Content\Sass\bootstrap\_bootstrap.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Content\Sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\Sass\bootstrap\_alerts.scss" />
+    <Content Include="Content\Sass\bootstrap\_badges.scss" />
+    <Content Include="Content\Sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Content\Sass\bootstrap\_button-groups.scss" />
+    <Content Include="Content\Sass\bootstrap\_buttons.scss" />
+    <Content Include="Content\Sass\bootstrap\_carousel.scss" />
+    <Content Include="Content\Sass\bootstrap\_close.scss" />
+    <Content Include="Content\Sass\bootstrap\_code.scss" />
+    <Content Include="Content\Sass\bootstrap\_component-animations.scss" />
+    <Content Include="Content\Sass\bootstrap\_dropdowns.scss" />
+    <Content Include="Content\Sass\bootstrap\_forms.scss" />
+    <Content Include="Content\Sass\bootstrap\_glyphicons.scss" />
+    <Content Include="Content\Sass\bootstrap\_grid.scss" />
+    <Content Include="Content\Sass\bootstrap\_input-groups.scss" />
+    <Content Include="Content\Sass\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\Sass\bootstrap\_labels.scss" />
+    <Content Include="Content\Sass\bootstrap\_list-group.scss" />
+    <Content Include="Content\Sass\bootstrap\_media.scss" />
+    <Content Include="Content\Sass\bootstrap\_mixins.scss" />
+    <Content Include="Content\Sass\bootstrap\_modals.scss" />
+    <Content Include="Content\Sass\bootstrap\_navbar.scss" />
+    <Content Include="Content\Sass\bootstrap\_navs.scss" />
+    <Content Include="Content\Sass\bootstrap\_normalize.scss" />
+    <Content Include="Content\Sass\bootstrap\_pager.scss" />
+    <Content Include="Content\Sass\bootstrap\_pagination.scss" />
+    <Content Include="Content\Sass\bootstrap\_panels.scss" />
+    <Content Include="Content\Sass\bootstrap\_popovers.scss" />
+    <Content Include="Content\Sass\bootstrap\_print.scss" />
+    <Content Include="Content\Sass\bootstrap\_progress-bars.scss" />
+    <Content Include="Content\Sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="Content\Sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Content\Sass\bootstrap\_scaffolding.scss" />
+    <Content Include="Content\Sass\bootstrap\_tables.scss" />
+    <Content Include="Content\Sass\bootstrap\_theme.scss" />
+    <Content Include="Content\Sass\bootstrap\_thumbnails.scss" />
+    <Content Include="Content\Sass\bootstrap\_tooltip.scss" />
+    <Content Include="Content\Sass\bootstrap\_type.scss" />
+    <Content Include="Content\Sass\bootstrap\_utilities.scss" />
+    <Content Include="Content\Sass\bootstrap\_variables.scss" />
+    <Content Include="Content\Sass\bootstrap\_wells.scss" />
+    <Content Include="Content\Sass\animate\attention-seekers\_bounce.scss" />
+    <Content Include="Content\Sass\animate\attention-seekers\_flash.scss" />
+    <Content Include="Content\Sass\animate\attention-seekers\_pulse.scss" />
+    <Content Include="Content\Sass\animate\attention-seekers\_shake.scss" />
+    <Content Include="Content\Sass\animate\attention-seekers\_swing.scss" />
+    <Content Include="Content\Sass\animate\attention-seekers\_tada.scss" />
+    <Content Include="Content\Sass\animate\attention-seekers\_wiggle.scss" />
+    <Content Include="Content\Sass\animate\attention-seekers\_wobble.scss" />
+    <Content Include="Content\Sass\animate\bounce-enter\_bounceIn.scss" />
+    <Content Include="Content\Sass\animate\bounce-enter\_bounceInDown.scss" />
+    <Content Include="Content\Sass\animate\bounce-enter\_bounceInLeft.scss" />
+    <Content Include="Content\Sass\animate\bounce-enter\_bounceInRight.scss" />
+    <Content Include="Content\Sass\animate\bounce-enter\_bounceInUp.scss" />
+    <Content Include="Content\Sass\animate\bounce-exit\_bounceOut.scss" />
+    <Content Include="Content\Sass\animate\bounce-exit\_bounceOutDown.scss" />
+    <Content Include="Content\Sass\animate\bounce-exit\_bounceOutLeft.scss" />
+    <Content Include="Content\Sass\animate\bounce-exit\_bounceOutRight.scss" />
+    <Content Include="Content\Sass\animate\bounce-exit\_bounceOutUp.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeIn.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeInDown.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeInDownBig.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeInLeft.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeInLeftBig.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeInRight.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeInRightBig.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeInUp.scss" />
+    <Content Include="Content\Sass\animate\fade-enter\_fadeInUpBig.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOut.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOutDown.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOutDownBig.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOutLeft.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOutLeftBig.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOutRight.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOutRightBig.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOutUp.scss" />
+    <Content Include="Content\Sass\animate\fade-exit\_fadeOutUpBig.scss" />
+    <Content Include="Content\Sass\animate\flippers\_flip.scss" />
+    <Content Include="Content\Sass\animate\flippers\_flipInX.scss" />
+    <Content Include="Content\Sass\animate\flippers\_flipInY.scss" />
+    <Content Include="Content\Sass\animate\flippers\_flipOutX.scss" />
+    <Content Include="Content\Sass\animate\flippers\_flipOutY.scss" />
+    <Content Include="Content\Sass\animate\lightspeed\_lightSpeedIn.scss" />
+    <Content Include="Content\Sass\animate\lightspeed\_lightSpeedOut.scss" />
+    <Content Include="Content\Sass\animate\rotate-enter\_rotateIn.scss" />
+    <Content Include="Content\Sass\animate\rotate-enter\_rotateInDownLeft.scss" />
+    <Content Include="Content\Sass\animate\rotate-enter\_rotateInDownRight.scss" />
+    <Content Include="Content\Sass\animate\rotate-enter\_rotateInUpLeft.scss" />
+    <Content Include="Content\Sass\animate\rotate-enter\_rotateInUpRight.scss" />
+    <Content Include="Content\Sass\animate\rotate-exit\_rotateOut.scss" />
+    <Content Include="Content\Sass\animate\rotate-exit\_rotateOutDownLeft.scss" />
+    <Content Include="Content\Sass\animate\rotate-exit\_rotateOutDownRight.scss" />
+    <Content Include="Content\Sass\animate\rotate-exit\_rotateOutUpLeft.scss" />
+    <Content Include="Content\Sass\animate\rotate-exit\_rotateOutUpRight.scss" />
+    <Content Include="Content\Sass\animate\slide-enter\_slideInDown.scss" />
+    <Content Include="Content\Sass\animate\slide-enter\_slideInLeft.scss" />
+    <Content Include="Content\Sass\animate\slide-enter\_slideInRight.scss" />
+    <Content Include="Content\Sass\animate\slide-enter\_slideInUp.scss" />
+    <Content Include="Content\Sass\animate\slide-exit\_slideOutDown.scss" />
+    <Content Include="Content\Sass\animate\slide-exit\_slideOutLeft.scss" />
+    <Content Include="Content\Sass\animate\slide-exit\_slideOutRight.scss" />
+    <Content Include="Content\Sass\animate\slide-exit\_slideOutUp.scss" />
+    <Content Include="Content\Sass\animate\special\_hinge.scss" />
+    <Content Include="Content\Sass\animate\special\_rollIn.scss" />
+    <Content Include="Content\Sass\animate\special\_rollOut.scss" />
+    <Content Include="Content\Sass\animate\zoom-enter\_zoomIn.scss" />
+    <Content Include="Content\Sass\animate\zoom-enter\_zoomInDown.scss" />
+    <Content Include="Content\Sass\animate\zoom-enter\_zoomInLeft.scss" />
+    <Content Include="Content\Sass\animate\zoom-enter\_zoomInRight.scss" />
+    <Content Include="Content\Sass\animate\zoom-enter\_zoomInUp.scss" />
+    <Content Include="Content\Sass\animate\zoom-exit\_zoomOut.scss" />
+    <Content Include="Content\Sass\animate\zoom-exit\_zoomOutDown.scss" />
+    <Content Include="Content\Sass\animate\zoom-exit\_zoomOutLeft.scss" />
+    <Content Include="Content\Sass\animate\zoom-exit\_zoomOutRight.scss" />
+    <Content Include="Content\Sass\animate\zoom-exit\_zoomOutUp.scss" />
+    <Content Include="Content\Sass\animate\helpers\_base.scss" />
+    <Content Include="Content\Sass\animate\helpers\_mixins.scss" />
+    <Content Include="Content\Sass\animate\helpers\_settings.scss" />
+    <Content Include="Content\Sass\font-awesome\_font-awesome.scss" />
+    <Content Include="Content\Sass\font-awesome\_animated.scss" />
+    <Content Include="Content\Sass\font-awesome\_bordered-pulled.scss" />
+    <Content Include="Content\Sass\font-awesome\_core.scss" />
+    <Content Include="Content\Sass\font-awesome\_extras.scss" />
+    <Content Include="Content\Sass\font-awesome\_fixed-width.scss" />
+    <Content Include="Content\Sass\font-awesome\_icons.scss" />
+    <Content Include="Content\Sass\font-awesome\_larger.scss" />
+    <Content Include="Content\Sass\font-awesome\_list.scss" />
+    <Content Include="Content\Sass\font-awesome\_mixins.scss" />
+    <Content Include="Content\Sass\font-awesome\_path.scss" />
+    <Content Include="Content\Sass\font-awesome\_rotated-flipped.scss" />
+    <Content Include="Content\Sass\font-awesome\_stacked.scss" />
+    <Content Include="Content\Sass\font-awesome\_variables.scss" />
+    <Content Include="Content\Sass\animate\_animate.scss" />
+    <Content Include="Content\Sass\angular-aside\_aside.scss" />
+    <Content Include="Content\Sass\stylemaster.scss" />
+    <Content Include="Content\Sass\zombie-fist\_variables.scss" />
+    <Content Include="Content\Sass\zombie-fist\_metalIcons.scss" />
+    <Content Include="Content\Sass\zombie-fist\_glowingtext.scss" />
+    <None Include="Properties\PublishProfiles\dev-zombiefist.pubxml" />
+    <Content Include="ngApp\content\home.controller.js">
+      <DependentUpon>home.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\content\home.html" />
+    <Content Include="ngApp\content\enter.html" />
+    <Content Include="ngApp\examples\exampleForm.controller.js">
+      <DependentUpon>exampleForm.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\examples\exampleModal.controller.js">
+      <DependentUpon>exampleModal.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\examples\examples.controller.js">
+      <DependentUpon>examples.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\examples\modal.html" />
+    <Content Include="ngApp\examples\billboard.html" />
+    <Content Include="ngApp\examples\form.html" />
+    <Content Include="ngApp\examples\onecolumn.html" />
+    <Content Include="ngApp\examples\sidebar.html" />
+    <Content Include="ngApp\examples\twocolumn.html" />
+    <Content Include="ngApp\examples\_routes.js">
+      <DependentUpon>_routes.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\identity\identity.service.js">
+      <DependentUpon>identity.service.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\identity\login.controller.js">
+      <DependentUpon>login.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\identity\login.html" />
+    <Content Include="ngApp\identity\register.controller.js">
+      <DependentUpon>register.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\identity\register.html" />
+    <Content Include="ngApp\identity\register.viewModel.js">
+      <DependentUpon>register.viewModel.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\identity\userProfile.viewModel.js">
+      <DependentUpon>userProfile.viewModel.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\images\consIcon.png" />
+    <Content Include="ngApp\images\prosIcon.png" />
+    <Content Include="ngApp\images\Wiki-background.jpg" />
+    <Content Include="ngApp\lists\old.lists.partial.html" />
+    <Content Include="ngApp\lists\lists.controller.js">
+      <DependentUpon>lists.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\lists\planList.service.js">
+      <DependentUpon>planList.service.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\lists\planList.viewModel.js">
+      <DependentUpon>planList.viewModel.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\lists\planListItem.viewModel.js">
+      <DependentUpon>planListItem.viewModel.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\lists\savePlanList.viewModel.js">
+      <DependentUpon>savePlanList.viewModel.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\lists\savePlanListItem.viewModel.js">
+      <DependentUpon>savePlanListItem.viewModel.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\locations\location.viewModel.js">
+      <DependentUpon>location.viewModel.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\lists\lists.html" />
+    <Content Include="ngApp\locations\locations.controller.js">
+      <DependentUpon>locations.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\locations\locations.html" />
+    <Content Include="ngApp\locations\locationType.enum.js">
+      <DependentUpon>locationType.enum.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\locations\map.service.js">
+      <DependentUpon>map.service.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\locations\planLocation.service.js">
+      <DependentUpon>planLocation.service.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\locations\_old_map.html" />
+    <Content Include="ngApp\locations\_old_map.js" />
+    <Content Include="ngApp\module.js">
+      <DependentUpon>module.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\routes.js">
+      <DependentUpon>routes.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\shared\authInterceptor.js">
+      <DependentUpon>authInterceptor.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\shared\layout.controller.js">
+      <DependentUpon>layout.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\shared\partialviews\copyright.html" />
+    <Content Include="ngApp\shared\partialviews\mainFooter.html" />
+    <Content Include="ngApp\shared\partialviews\socialIcons.html" />
+    <Content Include="ngApp\shared\zfMatch.directive.js">
+      <DependentUpon>zfMatch.directive.ts</DependentUpon>
+    </Content>
+    <Content Include="ngApp\defense\archery.html" />
+    <Content Include="ngApp\defense\blades.html" />
+    <Content Include="ngApp\defense\defensesidebar.html" />
+    <Content Include="ngApp\defense\governor101.html" />
+    <Content Include="ngApp\defense\handguns.html" />
+    <Content Include="ngApp\defense\homedefense.html" />
+    <Content Include="ngApp\defense\homemade.html" />
+    <Content Include="ngApp\defense\realestate.html" />
+    <Content Include="ngApp\defense\rifles.html" />
+    <Content Include="ngApp\defense\safehousetop5.html" />
+    <Content Include="ngApp\defense\shotguns.html" />
+    <Content Include="ngApp\defense\tools.html" />
+    <Content Include="ngApp\defense\weaponsofwar.html" />
+    <Content Include="ngApp\survival\donteatgrandma.html" />
+    <Content Include="ngApp\survival\food.html" />
+    <Content Include="ngApp\survival\othergear.html" />
+    <Content Include="ngApp\survival\survivalsidebar.html" />
+    <Content Include="ngApp\survival\water.html" />
+    <Content Include="ngApp\travel\bestlaidplans.html" />
+    <Content Include="ngApp\travel\desertoasis.html" />
+    <Content Include="ngApp\travel\gonorth.html" />
+    <Content Include="ngApp\travel\noplan.html" />
+    <Content Include="ngApp\travel\travelsidebar.html" />
+    <Content Include="ngApp\travel\whereto.html" />
+    <Content Include="ngApp\vehicles\battleready.html" />
+    <Content Include="ngApp\vehicles\boostingcars.html" />
+    <Content Include="ngApp\vehicles\cars.html" />
+    <Content Include="ngApp\vehicles\suvs.html" />
+    <Content Include="ngApp\vehicles\trucks.html" />
+    <Content Include="ngApp\vehicles\vans.html" />
+    <Content Include="ngApp\vehicles\vehiclessidebar.html" />
+    <Content Include="Scripts\angular\angular-route.js" />
+    <Content Include="Scripts\angular\angular-ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\bootstrap\affix.js" />
+    <Content Include="Scripts\bootstrap\alert.js" />
+    <Content Include="Scripts\bootstrap\button.js" />
+    <Content Include="Scripts\bootstrap\carousel.js" />
+    <Content Include="Scripts\bootstrap\collapse.js" />
+    <Content Include="Scripts\bootstrap\dropdown.js" />
+    <Content Include="Scripts\bootstrap\modal.js" />
+    <Content Include="Scripts\bootstrap\popover.js" />
+    <Content Include="Scripts\bootstrap\scrollspy.js" />
+    <Content Include="Scripts\bootstrap\tab.js" />
+    <Content Include="Scripts\bootstrap\tooltip.js" />
+    <Content Include="Scripts\bootstrap\transition.js" />
+    <Content Include="Scripts\angular\angular-animate.js" />
+    <Content Include="Scripts\angular\angular-aside.js" />
+    <Content Include="Scripts\angular\angular-messages.js" />
+    <Content Include="Scripts\angular\angular-ui-router.js" />
+    <Content Include="Scripts\angular\angular.js" />
+    <Content Include="ngApp\shared\countdowntimer.directive.js" />
+    <Content Include="Scripts\jquery.burn.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="ngApp\defense\readytofight.html" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Home\index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Live.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="ngApp\content\home.controller.ts" />
+    <TypeScriptCompile Include="ngApp\examples\exampleForm.controller.ts" />
+    <TypeScriptCompile Include="ngApp\examples\exampleModal.controller.ts" />
+    <TypeScriptCompile Include="ngApp\examples\examples.controller.ts" />
+    <TypeScriptCompile Include="ngApp\examples\_routes.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ngApp\identity\identity.service.ts" />
+    <TypeScriptCompile Include="ngApp\identity\login.controller.ts" />
+    <TypeScriptCompile Include="ngApp\identity\register.controller.ts" />
+    <TypeScriptCompile Include="ngApp\identity\register.viewModel.ts" />
+    <TypeScriptCompile Include="ngApp\identity\userProfile.viewModel.ts" />
+    <TypeScriptCompile Include="ngApp\lists\savePlanList.viewModel.ts" />
+    <TypeScriptCompile Include="ngApp\lists\savePlanListItem.viewModel.ts" />
+    <TypeScriptCompile Include="ngApp\lists\lists.controller.ts" />
+    <TypeScriptCompile Include="ngApp\lists\planList.service.ts" />
+    <TypeScriptCompile Include="ngApp\lists\planList.viewModel.ts" />
+    <TypeScriptCompile Include="ngApp\lists\planListItem.viewModel.ts" />
+    <TypeScriptCompile Include="ngApp\locations\location.viewModel.ts" />
+    <TypeScriptCompile Include="ngApp\locations\locations.controller.ts" />
+    <TypeScriptCompile Include="ngApp\locations\locationType.enum.ts" />
+    <TypeScriptCompile Include="ngApp\locations\map.service.ts" />
+    <TypeScriptCompile Include="ngApp\locations\planLocation.service.ts" />
+    <TypeScriptCompile Include="ngApp\module.ts" />
+    <TypeScriptCompile Include="ngApp\routes.ts" />
+    <TypeScriptCompile Include="ngApp\shared\authInterceptor.ts" />
+    <TypeScriptCompile Include="ngApp\shared\layout.controller.ts" />
+    <TypeScriptCompile Include="ngApp\shared\zfMatch.directive.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-aside.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-ui-bootstrap.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-animate.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-resource.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-route.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-ui-router.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\bootstrap.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\google.maps.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509292326151_InitialCreate.resx">
+      <DependentUpon>201509292326151_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510010753184_UserChanges.resx">
+      <DependentUpon>201510010753184_UserChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510011454261_UpdateUserAndLists.resx">
+      <DependentUpon>201510011454261_UpdateUserAndLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510210502359_ZombieFist.Models.Data.ApplicationDbContext.resx">
+      <DependentUpon>201510210502359_ZombieFist.Models.Data.ApplicationDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Live|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52929</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52929/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

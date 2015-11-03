@@ -1,0 +1,52 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/content/images/mjrFuKF.jpg'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+
+<section class="container">
+    <div class="row">
+
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Title -->
+                    <h3>Archery</h3>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/ngApp/images/prosIcon.png" />
+                    <!-- Pros -->
+                    <p>
+                        Silent and deadly, well, some of the time. Achery is a good choice for hunting deer and small game. If you seek to do things ninja style then compound bows and their cousin the crossbow may be your meal ticket.  Quiet deployment and retrievable ammunition are the biggest benefit but it ends about there. Do you really want to use an arrow that has infected biological material caked upon it's soul? If so, I suggest you carry around some rubbing alcohol or bleach, grandmas wet wipes won't do.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img ng-src="/ngApp/images/consIcon.png" />
+                    <!-- Cons -->
+                    <p>
+                        Probably the worst choice for taking out zed, the bow is clunky, takes years to reload, and requires significant training for anything ressembling accuracy.  So unless you are an avid bo hunter already, maybe keep this baby at base camp, simply a nice to have.  While the crossbow is a little easier to pick up and play, it still has many of the drawbacks of the bow.  Let's be serious, you aren't Daryl, he is a fictionalized character who probably would have been dead season one with that choice of weaponry.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/defense/defensesidebar.html'"></div>
+        </div>
+    </div>
+</section>
+
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

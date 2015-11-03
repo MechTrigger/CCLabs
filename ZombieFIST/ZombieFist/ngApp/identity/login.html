@@ -1,0 +1,60 @@
+﻿<!-- FYI this is one view. If you don't see an ng-include, it is one view -->
+<div class="billboard" style="background-image: url('/content/images/zombiebackground-2.png'); ">
+    <div class="container">
+        <div class="row ng-cloak">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="well">
+                    <fieldset>
+                        <legend class="text-center">Login to your account</legend>
+                            <form name="vm.loginForm" novalidate class="form-group" ng-submit="vm.login()">
+
+                            <div class="form-group">
+                                <div class="alert alert-danger ng-cloak" ng-show="vm.loginError">
+                                    Email / Password combination not found.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" ng-model="vm.email" required type="email" class="form-control" placeholder="Email">
+                                <div class="text-danger" ng-messages="vm.loginForm.email.$error" ng-show="vm.loginForm.email.$touched || vm.loginForm.$submitted">
+                                    <span class="help-block" ng-message="required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="password" ng-model="vm.password" required type="password" class="form-control" placeholder="Password">
+                                <div class="text-danger" ng-messages="vm.loginForm.password.$error" ng-show="vm.loginForm.password.$touched || vm.loginForm.$submitted">
+                                    <span class="help-block" ng-message="required">Required</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-danger" ng-disabled="vm.isLoggingIn">Login</button>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <div class="login-provider">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
+
+                        <div class="login-provider">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+
+                        <div class="login-provider">
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

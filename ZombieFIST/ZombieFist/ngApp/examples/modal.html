@@ -1,0 +1,25 @@
+﻿ <!-- This View uses the exampleModal.controller --> 
+
+<div class="modal-header">
+    <h4 class="modal-title text-center">Kill a friend</h4>
+</div>
+<div class="modal-body">
+
+    <h5 class="text-center">Who shall we sacrafice to the zombies?</h5>
+
+    <div class="list-group">
+        <a class="list-group-item" ng-repeat="name in vm.names" ng-click="vm.selectedName = name">{{ name }}</a>
+    </div>
+
+    <!-- This displays the choice "inside the modal" -->
+    <h6 class="text-center">
+        <span ng-show="vm.selectedName.length == 0">No one is selected</span>
+        <span ng-show="vm.selectedName.length > 0">You selected: <b>{{ vm.selectedName }}</b></span>
+    </h6>
+
+    <!-- If you recall these are the buttons from the exampleModal.controller -->
+</div>
+<div class="modal-footer">
+    <a class="btn btn-primary btn-block" ng-click="vm.ok()">Give them up!</a>
+    <a class="btn btn-default btn-block" ng-click="vm.cancel()">Cancel</a>
+</div>

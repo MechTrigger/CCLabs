@@ -1,0 +1,52 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/content/images/mjrFuKF.jpg'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+
+<section class="container">
+    <div class="row">
+
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Title -->
+                    <h3>Tools</h3>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/ngApp/images/prosIcon.png" />
+                    <!-- Pros -->
+                    <p>
+                        Tools we consider anything you would find in a garage. Shovels, axes, hell, even a 2x4 could serve a purpose for defense.  While we don't suggest using an axe for your primary weapon slot it can be utilized in many a situation.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img ng-src="/ngApp/images/consIcon.png" />
+                    <!-- Cons -->
+                    <p>
+                        Have you ever swung an axe and missed your target.  The momentum alone will drop you on your keister and help you aquire a brand new munched out blood squirting hole in your trapizius. Axes are good for chopping wood, and rakes are good for leaves.  You don't really have a rake do you?  You are probably too dead to read this.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/defense/defensesidebar.html'"></div>
+        </div>
+    </div>
+</section>
+
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

@@ -1,4 +1,63 @@
-﻿<md-dialog>
+﻿<div class="container body-content">
+    <h2>Register.</h2>
+    <form name="registerForm" class="form-horizontal" role="form" novalidate ng-submit="vm.register()">
+        <h4>Create a new account.</h4>
+        <hr />
+
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="userName">
+                User Name:
+                <input class="form-control" ng-model="vm.newuser.username" name="userName" type="text"
+                       required />
+                <span ng-show="registerForm.userName.$touched && registerForm.userName.$error.required"
+                      class="has-error help-block">User name is required!</span>
+            </label>
+        </div>
+        <div>
+        </div>    <div class="form-group">
+            <label class="col-md-2 control-label" for="email">
+                Email:
+                <input class="form-control" ng-model="vm.newuser.email" name="email" type="text"
+                       ng-required="true" />
+                <span ng-show="registerForm.email.$touched && registerForm.email.$error.required"
+                      class="has-error help-block">Email is required!</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="password">
+                Password:
+                <input class="form-control" ng-model="vm.newuser.password" name="password"
+                       type="password" ng-required="true" />
+                <span ng-show="registerForm.password.$touched && registerForm.password.$error.required"
+                      class="has-error help-block">Password is required!</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="confirmPassword">
+                Confirm Password
+                <input class="form-control" ng-model="vm.newuser.confirmPassword" name="confirmPassword" type="password"
+                       ng-required="true" />
+                <span ng-show="registerForm.confirmPassword.$touched && registerForm.confirmPassword.$error.required"
+                      class="has-error help-block">Confirmation required!</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Register" ng-disabled="registerForm.$invalid" />
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+<!--<md-dialog>
     <md-dialog-content>
         <form id="register" ng-submit="account.register()">
             <div layout="column">
@@ -22,10 +81,6 @@
                 </div>
             <div>
                 <md-input-container>
-                    <label>Instrument:</label>
-                    <input ng-model="account.instrument" />
-                </md-input-container>
-                <md-input-container>
                     <label>Password:</label>
                     <input ng-model="account.password" />
                 </md-input-container>
@@ -37,4 +92,4 @@
             <md-button type="submit" value="Register">Register</md-button>
         </form>
     </md-dialog-content>
-</md-dialog>
+</md-dialog>-->

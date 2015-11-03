@@ -1,0 +1,147 @@
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../font-awesome/variables";
+//*********************************************************
+// Site style variables. Ones we create start with zf-
+//*********************************************************
+
+//---------------------------------------------------------
+// Set the icon font paths based on our folder structure
+//---------------------------------------------------------
+$icon-font-path:            '/content/fonts/'; // glyphicon
+$fa-font-path:              '/content/fonts/'; // fontawesome
+
+//---------------------------------------------------------
+// Theme: Colors
+//---------------------------------------------------------
+$gray-base:                     #000000;
+$gray-darker:                   #222222; 
+$gray-dark:                     #282828; 
+$gray:                          #555555; 
+$gray-light:                    #888888; 
+$gray-lighter:                  #adafae; 
+
+$brand-primary:                 #cc0000;
+$brand-success:                 #77b300;
+$brand-info:                    #9933cc;
+$brand-warning:                 #ff8800;
+$brand-danger:                  #cc0000;
+
+$body-bg:                       #1c1a1b;
+$text-color:                    #ffffff;
+
+$zf-navtext-color:              #eeeeee;
+$zf-error-bg:                   #dfa1a1;
+$zf-error-message-color:        #e05558;
+$zf-social-icons-color:         #ffb700;
+$zf-social-icons-hover-color:   #ff8800;
+$zf-background-video-bg:        #222222;
+
+//---------------------------------------------------------
+// Theme: Forms
+//---------------------------------------------------------
+$input-border:                  transparent;
+$input-bg:                      $gray;
+$input-bg-disabled:             $gray-lighter;
+$input-color:                   $gray-base;
+$input-border-focus:            $gray;
+$input-color-placeholder:       $gray-light;
+$form-group-margin-bottom:      15px;
+$legend-color:                  $gray-dark;
+$legend-border-color:           $gray-dark;
+$zf-input-active-color:         $gray-lighter;
+
+//---------------------------------------------------------
+// Theme: Misc
+//---------------------------------------------------------
+$border-radius-base:        0;
+$border-radius-large:       0;
+$border-radius-small:       0;
+$badge-border-radius:       0;
+$list-group-border-radius:  0;
+$input-border-radius:       0;
+$btn-border-radius-base:    0;
+$btn-border-radius-small:   0;
+$btn-border-radius-large:   0;
+
+// --------------------------------------------------
+// Translucency
+// --------------------------------------------------
+$zf-transluenct-amt: 0.88;
+$zf-transluenct-bg: $gray-base;
+$zf-translucent: rgba($zf-transluenct-bg, $zf-transluenct-amt);
+$zf-translucent-hover: rgba($zf-transluenct-bg, 0.95);
+$zf-translucent-hover-stacked: rgba($zf-transluenct-bg, $zf-transluenct-amt / 2);
+
+//Sass specific "partial style" to include these properties in other styles (extends)
+%translucent {
+    background-color: $zf-translucent !important;
+}
+
+a%translucent {
+    &:hover {
+        background-color: $zf-translucent-hover !important;
+    }
+}
+
+//---------------------------------------------------------
+// Bootstrap Component Overrides and Customizations
+//---------------------------------------------------------
+
+// Try to keep components organized and labeled like pattern below
+
+// dropdown
+$dropdown-bg: $zf-translucent;
+$dropdown-divider-bg: $gray-dark;
+$dropdown-link-color: $component-active-color;
+$dropdown-link-hover-color: $component-active-color;
+$dropdown-link-hover-bg: darken($brand-primary, 20%);
+$dropdown-link-active-color: $component-active-color;
+
+// navbar
+$grid-float-breakpoint: $screen-md-min;
+$navbar-height: 60px;
+$nav-link-padding: 0 25px;
+$navbar-padding-vertical: 20px;
+$zf-navbar-max-height: 100px;
+$zf-navbar-font-size: round($font-size-base * 1.15);
+$navbar-inverse-color: $zf-navtext-color;
+$navbar-inverse-bg: $zf-translucent;
+$navbar-inverse-link-color: $gray-lighter;
+$navbar-inverse-link-hover-color: $zf-navtext-color;
+$navbar-inverse-link-hover-bg: $zf-translucent-hover-stacked;
+$navbar-inverse-link-active-color: $zf-navtext-color;
+$navbar-inverse-link-active-bg: $zf-translucent;
+
+// jumbotron
+$jumbotron-padding: 30px;
+$jumbotron-bg: $gray-dark;
+$jumbotron-font-size: ceil(($font-size-base * 2));
+$jumbotron-heading-font-size: ceil(($font-size-base * 5));
+
+//---------------------------------------------------------
+// Layout Specific Styling
+//---------------------------------------------------------
+$zf-primary-content-bg: $gray-base; // Primary content background color
+$zf-primary-content-padding: 50px; // Content padding around primary area
+
+$zf-header-banner-height: 350px; // Top header height if not specified otherwise
+$zf-footer-banner-height: 280px; // Footer banner height if not specified otherwise
+
+//---------------------------------------------------------
+// Custom Components
+//---------------------------------------------------------
+
+// copyright
+$zf-copyright-bg: $zf-translucent; // Copyrights
+$zf-copyright-color: $text-color; // Copyrights
+$zf-copyright-padding: 20px; // Copyrights
+$zf-copyright-font-size: round($font-size-base * 1.15); // 15% size change, Copyrights
+
+// social-icons
+$zf-social-icons-font-size: $font-size-base * 5; // Social Media Icons
+
+// background-video
+$zf-background-video-opacity: 0.5;
+
+

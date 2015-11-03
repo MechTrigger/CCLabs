@@ -1,0 +1,15 @@
+Upgrades "underway":
+
+1. Admin Area to add articles, manage users, etc. . 
+2. Management for the User, where they can meet and form groups.
+3. Working on a better interface so that navigating content is easier. Such as a side menu and charm bar for users to view and manage their lists without having to ever leave the list, it remains open until they retract it. 
+4. Site search for content
+5. Searching plans, and a better plan workspace. We are creating a workspace that feels like a "special ops" planning table, integrated with the map (map for planning, and to be used as an evaluation tool, to see where the danger zones are, where the most zombies are, best and worst locations, almost like a game)  
+5. Map: Working on things like a more intuitive edit, better themed icons, drag and drop to your Plan List. 
+6. Map: Territories. 
+7. Map fixes: Random Zombies generated once, so they appear to be traveling. 
+8. Map: multiple views for analysis. We have an infared view we didn't have tie to implement, that shows the hot zones for zombie activity. Fun stuff like that. 
+9.  Better branding, "and that's why we have the Sass implemented" to prepare for that. 
+10. ??
+11. loging in with your facebook and twitter or Google account using OAuth
+(we have social media icons on there so they may ask). I'll have those link to the login pages for these sites

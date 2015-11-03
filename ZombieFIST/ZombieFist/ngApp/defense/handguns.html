@@ -1,0 +1,52 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/content/images/mjrFuKF.jpg'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+
+<section class="container">
+    <div class="row">
+
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Title -->
+                    <h3>Handguns</h3>
+                   
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/ngApp/images/prosIcon.png" />
+                    <!-- Pros -->
+                    <p>
+                        Handguns are an efficient weapon and depending upon the calibur can pack a good punch at close range.  They are great for travel and can be easier to handle in tight quarters, like when you are sweeping the local pharmacy for grandma's meds. Just give her some horse tranquilizers instead and let her go easy already...jeez have some decency. 
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img ng-src="/ngApp/images/consIcon.png" />
+                    <!-- Cons -->
+                    <p>
+                        While compact and light in comparison to other weaponry, handguns do create some shortcomings if they are your only defense. They aren't great for any 'target practice' beyond 20 yards.  I know in movies if Joe Blow hero takes a little extra time lining up that shot, he always hits his target. But believe us, that won't be you and you'll probably just draw a dozen more z-dogs with your fail.  
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/defense/defensesidebar.html'"></div>
+        </div>
+    </div>
+</section>
+
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

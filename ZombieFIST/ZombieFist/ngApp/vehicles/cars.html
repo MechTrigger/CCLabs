@@ -1,0 +1,42 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/Content/Images/homebanner.png'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+<section class="container">
+    <div class="row">
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Title -->
+                    <h3>Cars</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/ngApp/images/prosIcon.png" />
+                    <!-- Pros -->
+                    <p>
+                        Cars have few advantages over any other types of vehicle other than fuel efficiency. Why should I care about fuel efficiency? Glad you asked. Well the less often you have to stop and get gas the less likely you are to have to deal with zztop and his fellow pumpkin heads. Another reason is 'other people' may be watching because they know they will be likely stopping points for those daring traversers.  They want your stuff so you better be ready to defend yourself and have a plan. You think it will take a minute to pull up to the pump and take off? Think again. Those pumps run on electricity which probably wont work, so getting gas will be a trickier ordeal than you'd imagine.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img ng-src="/ngApp/images/consIcon.png" />
+                    <!-- Cons -->
+                    <p>
+                        Like we said. Better gas mileage actually can be good thing, but cars have too many draw backs to warrant the benefit. Two words. Ground clearance. Cars give you the least ability in traveling off the road and through debri likely stewn across cities.  Also, roads deteriorate rapidly when not maintained. After a few short months with little to no traffic weeds will pop up between cracks and water will flood sewers without operational water management systems. In short you wont always see whats ahead and you want a little clearance.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/vehicles/vehiclessidebar.html'"></div>
+        </div>
+    </div>
+</section>
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

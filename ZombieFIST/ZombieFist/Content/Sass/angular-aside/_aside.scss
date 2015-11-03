@@ -1,0 +1,83 @@
+﻿@import "../animate/helpers/mixins";
+
+.ng-aside {
+	overflow-y: auto;
+	overflow-x: hidden;
+	.modal-dialog {
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		.modal-content {
+			overflow-y: auto;
+			overflow-x: hidden;
+			border: none;
+			border-radius: 0;
+		}
+	}
+	&.horizontal {
+		height: 100%;
+		.modal-dialog {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			.modal-content {
+				height: 100%;
+			}
+		}
+		&.left {
+			.modal-dialog {
+				left: 0;
+			}
+			&.in .modal-dialog {
+        		@include animate-prefixer(animation, fadeInLeft 400ms);
+			}
+		}
+		&.right {
+			.modal-dialog {
+        		@include animate-prefixer(animation, fadeOutRight 400ms);
+				right: 0;
+			}
+			&.in .modal-dialog {
+                @include animate-prefixer(animation, fadeInRight 250ms);
+			}
+		}
+	}
+	&.vertical {
+		width: 100% !important;
+		overflow: hidden;
+		.modal-dialog {
+			left: 0;
+			right: 0;
+			width: 100% !important;
+			.modal-content {
+				max-height: 400px;
+				width: 100%;
+			}
+		}
+		&.top {
+			.modal-dialog {
+                @include animate-prefixer(animation, fadeOutUp 250ms);
+				top: 0;
+			}
+			&.in .modal-dialog {
+                @include animate-prefixer(animation, fadeInTop 250ms);
+			}
+		}
+		&.bottom {
+			.modal-dialog {
+                @include animate-prefixer(animation, fadeOutDown 250ms);
+				bottom: 0;
+			}
+			&.in .modal-dialog {
+                @include animate-prefixer(animation, fadeInBottom 250ms);
+			}
+		}
+	}
+	&.fade .modal-dialog {
+        @include animate-prefixer(transition, none);
+        @include animate-prefixer(transform, none);
+	}
+}
+.modal-open .ng-aside.horizontal.left .modal-dialog {
+    @include animate-prefixer(animation, fadeOutLeft 250ms);
+}

@@ -1,0 +1,44 @@
+﻿@import "variables";
+// --------------------------------------------------
+// Layout Styles
+// --------------------------------------------------
+
+html {
+    height: 100%;
+
+    > body {
+        height:100%;
+        padding:0; //?
+        overflow-y:auto;
+
+        > main {
+            height: 100%;
+
+            > header {
+                padding: 0 !important;
+
+                .jumbotron {
+                    padding-top: $navbar-height * 1.5;
+                    height: $zf-header-banner-height;
+                    max-height: $zf-header-banner-height;
+                }
+            }
+
+            > section.container {
+                background-color: $zf-primary-content-bg;
+                padding: $zf-primary-content-padding;
+            }
+
+            > footer {
+                padding: 0 !important;
+                overflow: hidden;
+
+                .jumbotron {
+                    max-height: $zf-footer-banner-height;
+                    height: $zf-footer-banner-height;
+                    background-color:transparent !important;
+                }
+            }
+        }
+    }
+}

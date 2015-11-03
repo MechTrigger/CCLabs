@@ -29,8 +29,15 @@
                 </a>
 
                 <a href=""><img class="oAuth" src="http://icons.iconarchive.com/icons/icontexto/social-inside/256/social-inside-facebook-icon.png"></a>
-              
-                <md-button ng-controller="RegisterController as vm" ng-click="vm.openDialog()">Register</md-button>
+                
+                    @*<a href="/login" ng-show="!account.isLoggedIn()">Login</a>
+                    <a href="/logout" ng-show="account.isLoggedIn()">Logout</a>
+                
+                
+                    <a href='#' ng-show="account.isLoggedIn()">Hi, Trader Joes Fan! You are logged in.</a>
+                    <a href='#' ng-show="!account.isLoggedIn()">Hi, Guest</a>*@
+                
+                <md-button href="/register">Register</md-button>
                 <md-button ng-controller="LoginController as vm" ng-click="vm.openDialog()">Login</md-button>
                 
             </div>

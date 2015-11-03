@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html ng-app="zombieApp">
+<head>
+    <meta charset=" utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Fist!</title>
+    <meta name="description" content="ZombieFist plan for the Zombie Apocalypse">
+    <!-- Styles are now managed with Sass, do not link CSS stylesheets here -->
+    <link href="/content/sass/stylemaster.min.css" rel="stylesheet" />
+    <link rel="icon" href="/content/images/zombiefisticon.ico" type="image/x-icon" />
+    <!-- the base href being "/" just tells the browser what prefix to look for on our links.
+        We could have put "fisthead", and it would have looked for that too lol -->
+    <base href="/" />
+</head>
+
+<body ng-controller="layoutController as vm">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="vm.navIsCollapsed = !vm.navIsCollapsed">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/home" class="navbar-brand">ZombieFist</a>
+            </div>
+
+            <!-- MAIN NAV TOPIC 1: Defense -->
+            <div class="navbar-collapse collapse ng-cloak" uib-collapse="vm.navIsCollapsed">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" ng-class="vm.isActiveView('/defense')" ng-show="vm.user.isAuthenticated">
+                        <!-- ng-show="vm.user.isAuthenticated">-->
+                        <a href="#">Defense<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!-- Weapons Options -->
+                            <li class="dropdown-header">Personal Defense</li>
+                            <li><a href="/defense/readytofight">Ready to Fight</a></li>
+                            <li><a href="/defense/handguns">Handguns</a></li>
+                            <li><a href="/defense/rifles">Rifles</a></li>
+                            <li><a href="/defense/shotguns">Shotguns</a></li>
+                            <li><a href="/defense/archery">Archery</a></li>
+                            <li><a href="/defense/blades">Blades</a></li>
+                            <li><a href="/defense/tools">Tools</a></li>
+                            <li><a href="/defense/homemade">Home-made</a></li>
+                            <!-- Home Defense Options -->
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Home Defense</li>
+                            <li><a href="/defense/governor101">Governor 101</a></li>
+                            <li><a href="/defense/weaponsofwar">Weapons of War</a></li>
+                            <li><a href="/defense/realestate">Real Estate</a></li>
+                            <li><a href="/defense/safehousetop5">Safehouse Top 5</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- MAIN NAV TOPIC 2: Vehicles -->
+                    <li class="dropdown" ng-class="vm.isActiveView('/vehicles')" ng-show="vm.user.isAuthenticated">
+                        <!-- ng-show="vm.user.isAuthenticated">-->
+                        <a href="#">Vehicles <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/vehicles/boostingcars">Boosting Cars</a></li>
+                            <li class="dropdown-header">Types</li>
+                            <li><a href="/vehicles/cars">Cars</a></li>
+                            <li><a href="/vehicles/vans">Vans</a></li>
+                            <li><a href="/vehicles/trucks">Trucks</a></li>
+                            <li><a href="/vehicles/suvs">SUVs</a></li>
+                            <li class="dropdown-header">Articles</li>
+                            <li><a href="/vehicles/battleready">Battle Ready</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- MAIN NAV TOPIC 3: Survival -->
+                    <li class="dropdown" ng-class="vm.isActiveView('/survival')" ng-show="vm.user.isAuthenticated">
+                        <!-- ng-show="vm.user.isAuthenticated">-->
+                        <a href="#">Survival <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/survival/donteatgrandma">Don't Eat Grandma</a></li>
+                            <li class="dropdown-header">Essentials</li>
+                            <li><a href="/survival/food">Food</a></li>
+                            <li><a href="/survival/water">Water</a></li>
+                            <li><a href="/survival/othergear">Other Gear</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- MAIN NAV TOPIC 4: Travel -->
+                    <li class="dropdown" ng-class="vm.isActiveView('/travel')" ng-show="vm.user.isAuthenticated">
+                        <!-- ng-show="vm.user.isAuthenticated">-->
+                        <a href="#">Travel <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/travel/bestlaidplans">Best Laid Plans</a></li>
+                            <li><a href="/travel/noplan">No Plan</a></li>
+                            <li><a href="/travel/whereto">Where to Go</a></li>
+                            <li><a href="/travel/gonorth">The Dirty South</a></li>
+                            <li><a href="/travel/desertoasis">Desert Oasis</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- MAIN NAV TOPIC 5: My Survival Plan -->
+                    <li class="dropdown" ng-class="vm.isActiveView('/plan')" ng-show="vm.user.isAuthenticated">
+                        <!-- ng-show="vm.user.isAuthenticated">-->
+                        <a href="#">
+                            My Survival Plan <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">What to get</li>
+                            <li><a href="/plan/lists">My Lists</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Where to go</li>
+                            <li><a href="/plan/locations">My Locations</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Show first/last name at the top + Hide login & show logout when logged in -->
+                <ul class="nav navbar-nav navbar-right ng-cloak" ng-show="vm.user.isAuthenticated">
+                    <li>
+                        <p class="navbar-text">Signed in as {{vm.user.firstName}} {{vm.user.lastName}}</p>
+                    </li>
+                    <li><a ng-click="vm.logout()">Logout</a></li>
+                </ul>
+
+                <!-- Hide the login/register button when user is logged in/authenticated -->
+                <ul class="nav navbar-nav navbar-right ng-cloak" ng-hide="vm.user.isAuthenticated">
+                    <li ng-class="vm.isActiveView('/register')"><a href="/register">Register</a></li>
+                    <li ng-class="vm.isActiveView('/login')"><a href="/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reference/feed in your views here in ng-view -->
+    <main ng-view>
+    </main>
+
+    <!--  media section -->
+    <div ng-if="vm.playMusic" class="ng-cloak background-music">
+        <iframe frameborder="0" src="https://www.youtube.com/embed/kSS_tDfeLOk?autoplay=1&controls=0&loop=1&playlist=kSS_tDfeLOk"></iframe>
+    </div>
+
+    <div ng-if="vm.playVideo" class="ng-cloak background-video">
+        <iframe frameborder="0" src="https://www.youtube.com/embed/qjobIUHRrgM?autoplay=1&controls=0&loop=1&playlist=qjobIUHRrgM&showinfo=0&iv_load_policy=3"></iframe>
+    </div>
+    <!-- /media section -->
+
+
+    <!-- Don't add <script> tags here, Update /App_Start/BundleConfig.cs instead -->
+    <!-- Google map script is not a .js file and cannot go in bundle config, so it's okay here -->
+    @Scripts.Render("~/resourcescripts")
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+    @Scripts.Render("~/appscripts")
+
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('/content/images/mjrFuKF.jpg'); ">
+        <h1></h1>
+        <h2></h2>
+    </div>
+</header>
+
+<section class="container">
+    <div class="row">
+
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Title -->
+                    <h3>Rifles</h3>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/ngApp/images/prosIcon.png" />
+                    <!-- Pros -->
+                    <p>
+                        Rifles includes long guns and assault rifles, both serve slightly different purposes.  A bolt action rifle being our top choice for many reasons.  Bolt action rifles and the most accurate weapons you can get your bloody hands on post z-day. Knowing this they would serve you well for hunting food, clipping heads from a distance and any other use in an emergency.  Assault rifles would be a better choice in movies, although it would be nice to pop off rounds quickly with high magazine capacity and they are still quite accurate when weilded by someone with some experience.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img ng-src="/ngApp/images/consIcon.png" />
+                    <!-- Cons -->
+                    <p>
+                        The oppsosite of handguns, most rifles aren't designed for sweeping buildings and close quarter combat, unless you opt for something designed for it, like a stubby M4(A shortened version of the M16A2, you sacrafice some distance accuracy but may be worth it). Here again, don't choose a weapon by cool factor, form follows function, because zombie grandma doesn't care, she just wants to eat your finger cookies.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/defense/defensesidebar.html'"></div>
+        </div>
+    </div>
+</section>
+
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

@@ -1,0 +1,66 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('http://html.nkdev.info/youplay/dark/assets/images/banner-bg.jpg'); ">
+        <h1>Two Column Sample</h1>
+        <h2>Here is some more text</h2>
+    </div>
+</header>
+
+<section class="container">
+    <div class="row">
+        
+        <!-- larger column for content-->
+        <div class="col-sm-8">
+
+            <!-- inner rows to seperate out the content on the left side -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="lead">My Page or Article Title</p>
+                    <p>
+                        Vestibulum condimentum rhoncus felis sit amet porta. Aenean pretium massa mi,
+                        ut fringilla nisi auctor ut. In sit amet ultrices arcu. Aliquam sodales elementum
+                        sapien, in pretium lacus auctor fringilla. Cras vel dapibus quam, non tincidunt nisl.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                        Curabitur imperdiet dapibus tristique. Phasellus eu facilisis leo, non gravida metus.
+                        Quisque imperdiet ligula lacus, nec euismod nulla sodales in.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>
+                        Vestibulum condimentum rhoncus felis sit amet porta. Aenean pretium massa mi,
+                        ut fringilla nisi auctor ut. In sit amet ultrices arcu. Aliquam sodales elementum
+                        sapien, in pretium lacus auctor fringilla. Cras vel dapibus quam, non tincidunt nisl.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        Vestibulum condimentum rhoncus felis sit amet porta. Aenean pretium massa mi,
+                        ut fringilla nisi auctor ut. In sit amet ultrices arcu. Aliquam sodales elementum
+                        sapien, in pretium lacus auctor fringilla. Cras vel dapibus quam, non tincidunt nisl.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- loading a partial view for the form -->
+                    <div ng-include="'/ngApp/examples/form.html'"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- smaller column for navigation-->
+        <div class="col-sm-3 col-sm-offset-1">
+
+            <!-- loading a partial view for the sidebar -->
+            <div ng-include="'/ngApp/examples/sidebar.html'"></div>
+        </div>
+    </div>
+</section>
+
+<!-- this is the same footer again, just feeding it in here too-->
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

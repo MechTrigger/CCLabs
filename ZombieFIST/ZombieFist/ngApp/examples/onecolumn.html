@@ -1,0 +1,73 @@
+﻿<header class="container">
+    <div class="jumbotron" style="background-image: url('http://html.nkdev.info/youplay/dark/assets/images/banner-bg.jpg'); ">
+        <h1>One column sample</h1>
+        <h2>Here is some more text</h2>
+    </div>
+</header>
+
+<!-- This is the main content area (1 and 2 column views have this -->
+<section class="container">
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="lead">My Page or Article Title</p>
+            <p>
+                Vestibulum condimentum rhoncus felis sit amet porta. Aenean pretium massa mi,
+                ut fringilla nisi auctor ut. In sit amet ultrices arcu. Aliquam sodales elementum
+                sapien, in pretium lacus auctor fringilla. Cras vel dapibus quam, non tincidunt nisl.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                Curabitur imperdiet dapibus tristique. Phasellus eu facilisis leo, non gravida metus.
+                Quisque imperdiet ligula lacus, nec euismod nulla sodales in. Cras nibh tellus,
+                tincidunt eu odio nec, maximus feugiat neque. Quisque aliquet, nibh non efficitur
+                efficitur, ligula nulla rhoncus ipsum, eget tincidunt felis metus in sapien. Nunc
+                lacinia in leo ut porttitor. Pellentesque habitant morbi tristique senectus et netus
+                et malesuada fames ac turpis egestas.
+            </p>
+            <p>
+                Vestibulum condimentum rhoncus felis sit amet porta. Aenean pretium massa mi,
+                ut fringilla nisi auctor ut. In sit amet ultrices arcu. Aliquam sodales elementum
+                sapien, in pretium lacus auctor fringilla. Cras vel dapibus quam, non tincidunt nisl.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                Curabitur imperdiet dapibus tristique. Phasellus eu facilisis leo, non gravida metus.
+                Quisque imperdiet ligula lacus, nec euismod nulla sodales in. Cras nibh tellus,
+                tincidunt eu odio nec, maximus feugiat neque. Quisque aliquet, nibh non efficitur
+                efficitur, ligula nulla rhoncus ipsum, eget tincidunt felis metus in sapien. Nunc
+                lacinia in leo ut porttitor. Pellentesque habitant morbi tristique senectus et netus
+                et malesuada fames ac turpis egestas.
+            </p>
+            <p>
+                Vestibulum condimentum rhoncus felis sit amet porta. Aenean pretium massa mi,
+                ut fringilla nisi auctor ut. In sit amet ultrices arcu. Aliquam sodales elementum
+                sapien, in pretium lacus auctor fringilla. Cras vel dapibus quam, non tincidunt nisl.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                Curabitur imperdiet dapibus tristique. Phasellus eu facilisis leo, non gravida metus.
+                Quisque imperdiet ligula lacus, nec euismod nulla sodales in. Cras nibh tellus,
+                tincidunt eu odio nec, maximus feugiat neque. Quisque aliquet, nibh non efficitur
+                efficitur, ligula nulla rhoncus ipsum, eget tincidunt felis metus in sapien. Nunc
+                lacinia in leo ut porttitor. Pellentesque habitant morbi tristique senectus et netus
+                et malesuada fames ac turpis egestas.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <div class="well well-sm text-center">
+                <a ng-click="vm.openModal()" class="btn btn-primary btn-lg">Open Modal</a>
+                <a ng-click="vm.openAside()" class="btn btn-primary btn-lg">Open Aside</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-show="vm.selectedName.length > 0">
+        <div class="col-sm-offset-2 col-sm-8">
+            <div class="well well-sm">
+                <p class="lead text-center">Oh no! {{vm.selectedName}} is gonna die!</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- This is how you include a partial view into this same view. You can see the mainFooter.html -->
+<footer ng-include="'/ngApp/shared/partialviews/mainFooter.html'"></footer>

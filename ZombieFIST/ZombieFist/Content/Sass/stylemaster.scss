@@ -1,0 +1,238 @@
+﻿//*********************************************************
+//          ZombieFist Master Stylesheet                 
+//---------------------------------------------------------
+// This Stylesheet is the Master Aggregator, Minifier, Bundler. 
+// 
+// This stylesheet uses "Sass (.scss) partial files", from  
+// bootstrap, font awesome, and any other plugins we use 
+// as well as our own styles to create one big css file. 
+
+// DON'T add new styles directly to this file, instead,  
+// add a new .scss file or edit and existing .scss file  
+// in the /content/sass/zombie-fist/ folder               
+
+// If you have a normal .css file and want to convert it 
+// to a .scss file, you can use this online tool: 
+//      http://sebastianpontow.de/css2compass/
+
+// NOTE: This removes the need for us to have to create  
+// a separate bundle in the /app_start/bundleConfig.cs   
+
+//*********************************************************
+
+//      Contents:
+//      ---------
+//          * variables
+//          * bootstrap
+//          * font-awesome
+//          * animate.css
+//          * angular-aside
+//          * zombie-fist custom styles
+
+//*********************************************************
+// all variables / mixins - loaded first so we can override
+//*********************************************************
+
+// Bootstrap default variables and mixins 
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Bootswatch Cyborg variables
+@import "bootswatch-cyborg/variables";
+
+// FontAwesome default variables and mixins 
+@import "font-awesome/variables";
+@import "font-awesome/mixins";
+
+// Animate default variables and mixins 
+@import "animate/helpers/settings";
+@import "animate/helpers/mixins";
+
+// Only our "variables" like utilities, go last in the CSS
+ 
+@import "zombie-fist/variables";
+
+//*********************************************************
+// bootstrap
+//*********************************************************
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+@import "bootstrap/glyphicons";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap/labels";
+@import "bootstrap/badges";
+@import "bootstrap/jumbotron";
+@import "bootstrap/thumbnails";
+@import "bootstrap/alerts";
+@import "bootstrap/progress-bars";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/panels";
+@import "bootstrap/responsive-embed";
+@import "bootstrap/wells";
+@import "bootstrap/close";
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+@import "bootstrap/carousel";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+//*********************************************************
+// bootswatch cyborg
+//*********************************************************
+@import "bootswatch-cyborg/overrides";
+
+//*********************************************************
+// font-awesome
+//*********************************************************
+
+// fontawesome styles
+@import "font-awesome/path";
+@import "font-awesome/core";
+@import "font-awesome/larger";
+@import "font-awesome/fixed-width";
+@import "font-awesome/list";
+@import "font-awesome/bordered-pulled";
+@import "font-awesome/animated";
+@import "font-awesome/rotated-flipped";
+@import "font-awesome/stacked";
+@import "font-awesome/icons";
+
+//*********************************************************
+// animate (copied @imports from _animate.scss)
+//*********************************************************
+@import "animate/helpers/base";
+
+// ATTENTION
+@import	"animate/attention-seekers/bounce";
+@import "animate/attention-seekers/flash";
+@import "animate/attention-seekers/pulse";
+@import "animate/attention-seekers/shake";
+@import "animate/attention-seekers/swing";
+@import "animate/attention-seekers/wiggle";
+@import "animate/attention-seekers/wobble";
+@import "animate/attention-seekers/tada";
+
+// BOUNCE
+@import "animate/bounce-enter/bounceIn";
+@import "animate/bounce-enter/bounceInDown";
+@import "animate/bounce-enter/bounceInLeft";
+@import "animate/bounce-enter/bounceInRight";
+@import "animate/bounce-enter/bounceInUp";
+@import "animate/bounce-exit/bounceOut";
+@import "animate/bounce-exit/bounceOutDown";
+@import "animate/bounce-exit/bounceOutLeft";
+@import "animate/bounce-exit/bounceOutRight";
+@import "animate/bounce-exit/bounceOutUp";
+
+// FADE
+@import	"animate/fade-enter/fadeIn";
+@import "animate/fade-enter/fadeInDown";
+@import "animate/fade-enter/fadeInDownBig";
+@import "animate/fade-enter/fadeInLeft";
+@import "animate/fade-enter/fadeInLeftBig";
+@import "animate/fade-enter/fadeInRight";
+@import "animate/fade-enter/fadeInRightBig";
+@import "animate/fade-enter/fadeInUp";
+@import "animate/fade-enter/fadeInUpBig";
+@import "animate/fade-exit/fadeOut";
+@import "animate/fade-exit/fadeOutDown";
+@import "animate/fade-exit/fadeOutDownBig";
+@import "animate/fade-exit/fadeOutLeft";
+@import "animate/fade-exit/fadeOutLeftBig";
+@import "animate/fade-exit/fadeOutRight";
+@import "animate/fade-exit/fadeOutRightBig";
+@import "animate/fade-exit/fadeOutUp";
+@import "animate/fade-exit/fadeOutUpBig";
+
+// FLIP
+@import "animate/flippers/flip";
+@import "animate/flippers/flipInX";
+@import "animate/flippers/flipInY";
+@import "animate/flippers/flipOutX";
+@import "animate/flippers/flipOutY";
+
+// LIGHTSPEED
+@import	"animate/lightspeed/lightSpeedIn";
+@import "animate/lightspeed/lightSpeedOut";
+
+// ROTATE
+@import	"animate/rotate-enter/rotateIn";
+@import "animate/rotate-enter/rotateInDownLeft";
+@import "animate/rotate-enter/rotateInDownRight";
+@import "animate/rotate-enter/rotateInUpLeft";
+@import "animate/rotate-enter/rotateInUpRight";
+@import "animate/rotate-exit/rotateOut";
+@import "animate/rotate-exit/rotateOutDownLeft";
+@import "animate/rotate-exit/rotateOutDownRight";
+@import "animate/rotate-exit/rotateOutUpLeft";
+@import "animate/rotate-exit/rotateOutUpRight";
+
+// SLIDE
+@import "animate/slide-enter/slideInDown";
+@import "animate/slide-enter/slideInLeft";
+@import "animate/slide-enter/slideInRight";
+@import "animate/slide-enter/slideInUp";
+@import "animate/slide-exit/slideOutDown";
+@import "animate/slide-exit/slideOutLeft";
+@import "animate/slide-exit/slideOutRight";
+@import "animate/slide-exit/slideOutUp";
+
+// SPECIAL
+@import "animate/special/hinge";
+@import "animate/special/rollIn";
+@import "animate/special/rollOut";
+
+// ZOOM
+@import "animate/zoom-enter/zoomIn";
+@import "animate/zoom-enter/zoomInDown";
+@import "animate/zoom-enter/zoomInLeft";
+@import "animate/zoom-enter/zoomInRight";
+@import "animate/zoom-enter/zoomInUp";
+@import "animate/zoom-exit/zoomOut";
+@import "animate/zoom-exit/zoomOutDown";
+@import "animate/zoom-exit/zoomOutLeft";
+@import "animate/zoom-exit/zoomOutRight";
+@import "animate/zoom-exit/zoomOutUp";
+
+//*********************************************************
+// angular-aside 
+//*********************************************************
+@import "angular-aside/aside";
+
+//*********************************************************
+// zombie-fist custom styles
+//*********************************************************
+
+@import "zombie-fist/common";
+@import "zombie-fist/components";
+@import "zombie-fist/layout";
+@import "zombie-fist/neontext";
+//@import "zombie-fist/glowingtext"; // Glowing nav text
+//@import "zombie-fist/metalicons"; // Login page social icons
+
+
