@@ -1,0 +1,14 @@
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\LooseChange.dll.config
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\LooseChange.dll
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\LooseChange.pdb
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\Newtonsoft.Json.dll
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\System.Net.Http.Formatting.dll
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\System.Web.Http.dll
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\System.Web.Http.WebHost.dll
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\Newtonsoft.Json.xml
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\System.Net.Http.Formatting.xml
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\System.Web.Http.xml
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\bin\System.Web.Http.WebHost.xml
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\obj\Release\LooseChange.dll
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\obj\Release\LooseChange.pdb
+C:\Users\Jay\Desktop\Loose_Change_NAT\LooseChange\LooseChange\obj\Release\LooseChange.csprojResolveAssemblyReference.cache

@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Loose Change</title>
+
+</head>
+<body id="body_holder" style="text-align:center" onload="show()">
+    <script>
+        document.getElementById('body_holder').style.visibility = 'hidden';
+    </script>
+    <img id="logo" src="Images/looseChangelogo5.png" />
+    <!--Main Header Buttons-->
+    <div class="row">
+        <button id="btnInstructions" class="btn" type="button" data-toggle="modal" data-target="#instructions">Instructions</button>
+        <button id="btnCoinClicker" class="btn" type="button">Play Coin Clicker</button>
+        <button id="btnSpeedCoins" class="btn" type="button">Play Speed Coins</button>
+        <button id="btnHelpModal" type="button" class="btn" data-toggle="modal" data-target="#helpModal">Aghh! Help!</button>
+    </div>
+    <!--Info Center-->
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-3">
+            <img id="gameNameSpeed" src="Images/speedcoinslogo.png" />
+            <img id="gameNameClicker" src="Images/coinclickerlogo1.png" />
+        </div>
+
+        <div class="col-md-offset-1 col-md-2">
+            <h2 id="value"><span></span></h2>
+        </div>
+        <div id="points" class="hud col-md-offset-1 col-md-2">
+            <h2>SCORE: <span></span></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div id="messageCenter" class="col-md-12">
+            <p id="message">Welcome to Loose Change! Please select an option above.</p>
+        </div>
+    </div>
+    <!--SpeedCoins-->
+    <container class="container">
+        <div id="speedCoins">
+            <div class="row">
+                <button id="ans1" type="button" style="text-align:left;" class="col-md-offset-2 col-md-2 panel">
+                    <div id="1silverDollars" class="ansBlock"></div>
+                    <div id="1halfDollars" class="ansBlock"></div>
+                    <div id="1quarters" class="ansBlock"></div>
+                    <div id="1dimes" class="ansBlock"></div>
+                    <div id="1nickles" class="ansBlock"></div>
+                    <div id="1pennies" class="ansBlock"></div>
+                    <div id="1scrambleVersion" class="ansBlock"></div>
+                </button>
+                <button id="ans2" type="button" class="col-md-offset-1 col-md-2 panel">
+                    <div id="2silverDollars" class="ansBlock"></div>
+                    <div id="2halfDollars" class="ansBlock"></div>
+                    <div id="2quarters" class="ansBlock"></div>
+                    <div id="2dimes" class="ansBlock"></div>
+                    <div id="2nickles" class="ansBlock"></div>
+                    <div id="2pennies" class="ansBlock"></div>
+                    <div id="2scrambleVersion" class="ansBlock"></div>
+                </button>
+                <button id="ans3" type="button" class="col-md-offset-1 col-md-2 panel">
+                    <div id="3silverDollars" class="ansBlock"></div>
+                    <div id="3halfDollars" class="ansBlock"></div>
+                    <div id="3quarters" class="ansBlock"></div>
+                    <div id="3dimes" class="ansBlock"></div>
+                    <div id="3nickles" class="ansBlock"></div>
+                    <div id="3pennies" class="ansBlock"></div>
+                    <div id="3scrambleVersion" class="ansBlock"></div>
+                </button>
+            </div>
+        </div>
+        <!--CoinClicker-->
+        <div id="coinClicker">
+            <button id="submitAnswer" type="button" class="btn">Submit Solution</button>
+            <div id="coins" class="row">
+                <div class="col-md-1 col-md-offset-3">
+                    <img id="silverDollar" src="Images/rsSilverDollar.png" />
+                </div>
+                <div class="col-md-1">
+                    <img id="halfDollar" src="Images/rsHalfDollar.png" />
+                </div>
+                <div class="col-md-1">
+                    <img id="quarter" src="Images/rsQuarter2.png" />
+                </div>
+                <div class="col-md-1">
+                    <img id="dime" src="Images/rsDime3.png" />
+                </div>
+                <div class="col-md-1">
+                    <img id="nickle" src="Images/rsNickle.png" />
+                </div>
+                <div class="col-md-1">
+                    <img id="penny" src="Images/rsPenny.png" />
+                </div>
+            </div>
+            <div>
+                <div id="silverPTS" class="col-md-1 col-md-offset-3"><span class="glyphicon glyphicon-minus"></span>&nbsp;<span class="pts">0</span>&nbsp;<span class="glyphicon glyphicon-plus"></span></div>
+                <div id="halfPTS" class="col-md-1"><span class="glyphicon glyphicon-minus"></span>&nbsp;<span class="pts">0</span>&nbsp;<span class="glyphicon glyphicon-plus"></span></div>
+                <div id="quarterPTS" class="col-md-1"><span class="glyphicon glyphicon-minus"></span>&nbsp;<span class="pts">0</span>&nbsp;<span class="glyphicon glyphicon-plus"></span></div>
+                <div id="dimePTS" class="col-md-1"><span class="glyphicon glyphicon-minus"></span>&nbsp;<span class="pts">0</span>&nbsp;<span class="glyphicon glyphicon-plus"></span></div>
+                <div id="nicklePTS" class="col-md-1"><span class="glyphicon glyphicon-minus"></span>&nbsp;<span class="pts">0</span>&nbsp;<span class="glyphicon glyphicon-plus"></span></div>
+                <div id="pennyPTS" class="col-md-1"><span class="glyphicon glyphicon-minus"></span>&nbsp;<span class="pts">0</span>&nbsp;<span class="glyphicon glyphicon-plus"></span></div>
+
+            </div>
+        </div>
+    </container>
+    <!-- Instructions Modal -->
+    <div id="instructions" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Instructions</h4>
+                </div>
+                <div class="modal-body">
+                    <img id="speedCoinsHelp"src="Images/speedcoinshelp.jpg" />
+                    <p>SPEEDCOINS: Click one of three boxes that contains the best answer for the value displayed.  The correct answer will be the one that adds up to the correct change amount in as few coins as possible. Value will be between $.01 and $9.99. You have 10 seconds to pick the right answer. A correct answer will give you +10 points, a wrong answer -5 points.  Get to 50 points to win the game.  After you close the answer dialog box, timer will start again on the next problem. Have fun!</p><hr />
+                    <img id="coinClickerHelp" src="Images/coinclickerlogohelp.jpg" />
+                     <p>COIN CLICKER: Click the coins to get the correct change amount.  Remember, it must be in the fewest coins as possible.  From LEFT to RIGHT coins are as follows, SilverDollar 1.0, HalfDollar .50, Quarter .25, Dime .10, Nickle .05, Penny .01--You have 10 seconds to submit the right answer. A correct answer will give you +10 points, a wrong answer -5 points.  Get to 50 points to win the game.  After you close the answer dialog box, timer will start again on the next problem. Good luck!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Help Me!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>For any bugs or issues encountered on any of our games, please do not hesitate to contact our support staff.  We will do our best to respond in a timely manner. <hr /> Email us at: assemble7studios@gmail.com</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--Correct Answer Modal-->
+    <div id="correctSpeedCoins" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Nice job!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Correct! You've gained points.(+10)</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default continueSpeed" data-dismiss="modal">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Incorrect Speed Coins Modal -->
+    <div id="incorrectSpeedCoins" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Oops! Try Again!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Incorrect! You've lost points.(-5)</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default continueSpeed" data-dismiss="modal">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Correct CoinClicker Modal-->
+    <div id="correctModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Nice job!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Correct! You've gained points.(+10)</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default continue" data-dismiss="modal">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Incorrect CoinClicker Modal-->
+    <div id="incorrectModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Oops! Try Again!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Incorrect! You've lost points.(-5)</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default continue" data-dismiss="modal">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Times Up Modal-->
+    <div id="timesUpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">YOU LOSE!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You have run out of time. (It is such a valuable thing to waste.)</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default timesUpModal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- You Win Modal-->
+    <div id="winnerModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">YOU WON!!!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You've reached the 50 point goal! Awesome! <br />The force is strong with you.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default winnerModal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox">Easy Mode(20 Seconds)</label>
+    </div>
+    <!--Footer-->
+    <footer>
+        <img src="Images/a7logo.png" />
+        <p>
+            Contact information: <a href="mailto:assemble7studios@gmail.com">
+                assemble7studios@gmail.com
+            </a>
+        </p>
+    </footer>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link href="stylesheet.css" rel="stylesheet" />
+    <script src="Scripts/app.js"></script>
+</body>
+</html>
